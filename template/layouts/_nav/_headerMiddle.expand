@@ -1,0 +1,47 @@
+<div class="header-middle">
+    <div class="container">
+
+    <div class="row">
+    <ul class="header-middle--ul-search col-md text-start">
+        <li>
+            <div class="header-middle--ul-search--search-container">
+                {{ include('restaurant/template/layouts/_nav/_SearchTop.expand') }}
+            </div>
+        </li>
+       
+    </ul>
+       {% if header_data.headerlogo.section_state == 'enabled' %}
+
+<ul class="header-middle--ul-logo col-md text-center">
+    <li>
+        <a href="{{ link('common/home') }}">
+            {% if header_data.headerlogo.fields.headerlogo_Checkbox.value == 1 %}
+            <h3 class="header-middle--ul-logo--logo-text">{{ header_data.headerlogo.fields.logoText.value }}</h3>
+            {% else %}
+            <img src="{{ image(header_data.headerlogo.fields.logo.value) }}">
+            {% endif %}
+            <!--<h3 class="logo-word"><span>B</span>uiness name</h3>-->
+        </a>
+    </li>
+</ul>
+<ul class="header-middle--ul-cart col-md text-end">
+<li >
+    <div class="dropdown show">
+        <a onclick="OpenCart(this)" class="header-middle--ul-cart--cart-count">
+            <img src="{{ asset('assets/images/icon/bag.svg') }}">
+            <p class="header-middle--ul-cart--cart-count--number counter-Label" id="counterLabel">{{ cart.countProducts() }}</p>
+        </a>
+        <div class="header-middle--ul-cart--cart-details" style="display: none;">
+            <div class="OverLay">
+            </div>
+            {{ include('restaurant/template/layouts/_nav/_cartContent.expand') }}
+
+           
+        </div>
+    </div>
+</li>
+</ul>
+{% endif %} 
+</div>
+</div>
+</div>

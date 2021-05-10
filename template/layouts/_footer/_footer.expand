@@ -1,0 +1,6 @@
+{% block sectionFooter %}
+<footer class="footer">
+    {{ include('restaurant/template/layouts/_footer/_footerTop.expand') }}
+    {{ include('restaurant/template/layouts/_footer/_footerBottom.expand') }}
+</footer>
+{% endblock sectionFooter %}

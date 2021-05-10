@@ -1,0 +1,128 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+<!-- breadcrumb -->
+    <div class="page_header_color">
+   
+        <div class="breadcramb aos-item">
+             <div class="container">
+          {% for breadcrumb in breadcrumbs %}
+          {% if not loop.last %}
+          <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+          {% else %}
+          <p>{{ breadcrumb['text'] }}</p>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <h5 class="text-center">
+        {% for breadcrumb in breadcrumbs %}{% if loop.last %}{{ breadcrumb['text'] }}{% endif %}{% endfor %}
+      </h5>
+    </div>
+<!-- breadcrumb -->
+<div id="content" class="container">
+
+    <!-- <div class="page-title-base">
+        <h1 class="title-base">{{ lang('heading_title') }}</h1>
+      </div> -->
+      
+      {% if products %}
+      <div class="wishlist-info table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="image">{{ lang('column_image') }}</th>
+              <th class="name">{{ lang('column_name') }}</th>
+              <th class="model">{{ lang('column_model') }}</th>
+              <th class="rating">{{ lang('column_rating') }}</th>
+              <th class="stock">{{ lang('column_stock') }}</th>
+              <th class="price">{{ lang('column_price') }}</th>
+              <th class="action">{{ lang('column_action') }}</th>
+              <th></th>
+            </tr>
+          </thead>
+          {% for product in products %}
+          <tbody id="wishlist-row{{ product['product_id'] }}">
+            <tr>
+              <td class="image">
+                {% if product['thumb'] %}
+                <a  ><img src="{{ product['thumb'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" /></a>
+                {% endif %}
+          </td>
+          <td class="name"><a  >{{ product['name'] }}</a></td>
+          <td class="model">{{ product['model'] }}</td>
+          <td class="rating"> <img src="{{ asset('image/stars-' ~ product["rating"] ~ '.png') }}" </td>
+          <td class="stock">{{ product['stock'] }}</td>
+          {% if ('-1' not in product.price) and ('-1' not in product.special) %}
+          <td class="price">
+            {% if product['price'] %}
+            <div class="price">
+              {% if not product['special'] %}
+              {{ product['price'] }}
+              {% else %}
+              <s>{{ product['price'] }}</s> <b>{{ product['special'] }}</b>
+              {% endif %}
+            </div>
+            {% endif %}
+          </td>
+          <td class="action">
+            <a href="#" class="AddToCart" onclick="addToCart('{{ product['product_id'] }}'); return false;">
+              {{ lang('button_cart') }}
+              </a>
+            </td>
+            <td class="action_remove">
+              <a href="{{ product['remove'] }}" class="btn-close" onclick="removeWishList('{{ product['product_id'] }}',this)"
+                title="{{ lang('button_remove') }}">
+                <img class="item--remove" src="{{asset('assets/images/icon/delete.svg')}}" /></a>
+              </a>
+            </td>
+            {% else %}
+            <td class="action">
+              <a href="#" class="btn btn-primary" onclick="contact_us('{{ product.product_id }}'); return false;">
+                {{ lang('button_req_quote') }}
+              </a>
+            </td>
+            <td><div id="enquiry-{{ product.product_id }}" style="display:none">{{ product.name }}:</div></td>
+          {% endif %}
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% else %}
+  <br>
+  
+  <br>
+
+  <div class="content">{{ lang('text_empty') }}</div>
+  
+  <br>
+  
+    <br>
+    
+    <br>
+    {% endif %}
+    <!-- <div class="row">
+      <div class="col-md-12">
+        <div class="pull-right">
+          <a href="{{ link('account/account', '', 'SSL') }}" class="btn-continue pr-5 pl-5">{{ lang('button_continue') }}</a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+<script>
+function removeWishList(product_id,element){
+
+  $.ajax({
+    url: 'index.php?route=account/wishlist/remove',
+    data:{product_id:product_id},
+    type: 'post',
+    success: function(result) {
+        $(element).parents('tbody').remove();
+      
+    }
+});
+}
+</script>
+
+  {% endblock %}

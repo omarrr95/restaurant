@@ -1,0 +1,47 @@
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-left">
+                              <!-- Start Language -->
+                              <div class="dropdown show footer-bottom--language">
+                                <a role="button" id="dropdown-menu-button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fas fa-globe"></i> {{current_language.name}}
+                                </a>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdown-menu-button">
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% for language in languages %}
+                                        <a href="#" title="{{ language.name }}"
+                                            class="dropdown-item {{ language.name == current_language.name  ? "
+                                            active" : "" }}"
+                                            onclick="$('input[name=\'language_code\']').attr('value', '{{ language.code }}'); $(this).closest('form').submit(); return false;">
+                                            {{ language.name }}
+                                        </a>
+                                        {% endfor %}
+                                        <input type="hidden" name="language_code" value="" />
+                                        <input type="hidden" name="redirect" value="{{ redirect }}" />
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End Language -->
+                    {% if footer_data.payment.section_state == 'enabled' %}
+                 
+                        <!-- {% for collection in footer_data.payment.collections %}
+                        <a href="{{ collection.itemlink.value }}"> <img
+                                src="{{ image(collection.itemImage.value) }}"></a>
+                        {% endfor %} -->
+                   
+                    {% endif %} 
+                </div>
+                    {% if footer_data.copyright.section_state == 'enabled' %}
+                    <div class="pull-right">
+                        <p class="footer-bottom--copy-right-text">{{ footer_data.copyright.fields.copyrightText.value }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,345 @@
+.mfilter-price-inputs {
+    display: none !important;
+}
+.mfilter-iscroll {
+    max-height: auto !important;
+}
+.iScrollVerticalScrollbar  {
+    display: none !important;
+}
+.filter-price {
+    height: 6px;
+    margin: 10px 10px 25px;
+    .mfilter-slider-slider {
+        background: none;
+    }
+    .ui-slider-range {
+        position: relative;
+        span {
+            position: absolute;
+            top: 17px;
+            &.min {
+                #{$start}: -15px;
+            }
+            &.max {
+                #{$end}: -15px;
+            }
+        }
+    }
+    &.ui-slider .ui-slider-range {
+        background-color: $second-color;
+        opacity: 0.6;
+    }
+    .ui-slider-handle {
+        background-color: $second-color;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px #fff;
+        top: -8px;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+    .value {
+        position: absolute;
+        top: 20px;
+        left: 100%;
+        margin: 0 0 0 -20px;
+        width: auto;
+        text-align: center;
+        display: block;
+        font-size: 11px;
+        color: #333;
+        b {
+            font-weight: 400;
+            margin-#{$start}: 3px;
+        }
+      }
+      
+      .price-range-both.value {
+        width: 100px;
+        margin: 0 0 0 -50px;
+        top: 26px;
+      }
+      
+      .price-range-both {
+        display: none; 
+      }
+      
+      .value i {
+        font-style: normal;
+      }
+}
+.mfilter-box.new-filter {
+    .mfilter-counter {
+        font-size: 11px;
+    display: inline-block;
+    background-color: #ededed;
+    min-width: 48px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 10px;
+    &:after {
+        display: none;
+      
+    }
+    &.mfilter-close {
+        background-color: transparent;
+        width: 10px;
+        min-width: 15px;
+        border-radius: 0;
+    }
+    }
+   
+	.heading-opt2 {
+		border-bottom: none;
+		margin-bottom: 5px;
+	}
+	.filter-options-content {
+		border: 1px solid #ccc;
+		.mfilter-heading {
+			background-color: #f7f7f7;
+			border-bottom: 1px solid #ccc;
+			.mfilter-head-icon {
+				zoom: 0.6;
+				margin-top: 13px;
+			}
+		}
+		.mfilter-heading.mfilter-collapsed {
+			background-color: transparent;
+		}
+        .mfilter-price-slider {
+            background: none !important;
+            margin-bottom: 25px;
+            margin-top: 10px;
+            padding: 0 15px 5px !important;
+		#mfilter-price-slider {
+            height: 6px !important;
+            background: none !important;
+            border: 1px solid #ccc !important;
+            margin: 0 !important;
+            position: relative;
+            padding: 2px !important;
+            border-radius: 5px !important;
+            .ui-slider-range {
+                height: 4px;
+                top: 0px;
+                background-color: $second-color !important;
+            }
+			.ui-slider-handle {
+				background: unset !important;
+				background-color: $second-color !important;
+				width: 21px !important;
+                top: -8px;
+               border: 2px solid #ffffff !important;
+               box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+			}
+		}
+    }
+		.mfilter-search-button {
+			input {
+				max-width: calc(100% - 10px) !important;
+				min-width: calc(100% - 10px) !important;
+				width: calc(100% - 10px) !important;
+				height: 30px;
+			}
+			i {
+				width: 33px !important;
+				height: 30px !important;
+				margin-left: -25px !important;
+				background-position-y: 3px !important;
+				background-position-x: -65px !important;
+                background-color: $second-color !important;
+			}
+		}
+		.mfilter-tb {
+			.mfilter-tb-as-td {
+				font-size: 12px;
+				position: relative;
+				top: 1px;
+                border: none;
+                line-height: 40px;
+              &.mfilter-col-input {
+                width: 26px !important;
+                top: 10px
+              }
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    &:checked ~ .checkmark {
+                        background-color: $second-color;
+                    }
+                    &:checked ~ .checkmark:after {
+                        display: block;
+                    }
+                    
+                }
+                .checkmark {
+                    position: absolute;
+                    top: 1px;
+                    height: 23px;
+                    width: 23px;
+                    background-color: #f6f6f6;
+                    border: 1px solid #b2b2b2;
+                    transition: all 0.3s;
+                    #{$start}:0;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                    &:after {
+                        left: 8px;
+                        top: 5px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0px;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+                /* On mouse-over, add a grey background color */
+               &:hover input ~ .checkmark {
+                    background-color: #ccc;
+                }
+             
+                img {
+                    position: relative;
+                    top: -7px;
+                    height: 11px;
+                    margin-top: 9px;
+                   margin-bottom: 3px;
+                }
+                .star-index {
+    display: block;
+    line-height: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #b3b3b3;
+    position: relative;
+    top: -15px;
+			}
+			}
+		}
+        .mfilter-disabled {
+            .checkmark:hover {
+                cursor: not-allowed;
+            }
+        }
+	}
+}
+
+.filter-accordion {
+    .card {
+        border-radius: 0;
+     .card-header {
+        font-size: 13px;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        a {
+            color: #000;
+            display: block;
+          padding: 7px 15px;
+          border-bottom: 1px solid #ededed;
+          background-color: #f7f7f7;
+          i {      
+            line-height: 22px;
+           font-size: 11px;
+           transform: rotate(180deg);
+          }
+          &.collapsed {
+            background-color: #fff;
+            border-bottom: none;
+              i {
+                  transform: rotate(0deg);
+              }
+          }
+          }
+     }
+     .card-body {
+         padding: 5px 10px;
+         overflow: hidden;
+         .filter-accordion--ckeck-box {
+             position: relative;
+             margin-bottom: 7px;
+             > b {
+                font-size: 13px;
+                display: inline-block;
+                background-color: #ededed;
+                min-width: 48px;
+                text-align: center;
+                line-height: 28px;
+                border-radius: 10px;
+             }
+             .container-checkbox {
+                margin: 0;
+                font-size: 13px;
+                padding-left: 30px;
+                line-height: 24px;
+                position: relative;
+                img {
+                    position: relative;
+                    top: -7px;
+                    height: 11px;
+                }
+                b {
+                    display: block;
+    line-height: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #b3b3b3;
+    position: relative;
+    top: -9px;
+                }
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                &:checked ~ .checkmark {
+                    background-color: $second-color;
+                }
+                &:checked ~ .checkmark:after {
+                    display: block;
+                }
+            }
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 1px;
+                height: 23px;
+                width: 23px;
+                background-color: #f6f6f6;
+                border: 1px solid #b2b2b2;
+                transition: all 0.3s;
+                #{$start}:0;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+                &:after {
+                    left: 8px;
+                    top: 5px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0px;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+            /* On mouse-over, add a grey background color */
+           &:hover input ~ .checkmark {
+                background-color: #ccc;
+            }
+        }
+        }
+
+     }
+    }
+}

@@ -1,0 +1,57 @@
+{% block linksHeader %}
+<link rel="stylesheet" href="{{ csslink('assets/css/lib/bootstrap.min.css')}}">
+<!-- Fontawesome -->
+<link rel="stylesheet" href="{{ csslink('assets/css/fontawesome/all.min.css')}}">
+<!-- Animate  -->
+<link rel="stylesheet" href="{{ csslink('assets/css/lib/AnimateHTML.css')}}">
+<!-- mine CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+<link rel="stylesheet" href="{{ csslink('assets/css/main.css')}}">
+<link rel="stylesheet" href="{{ csslink('assets/css/jquery-ui-1.8.16.custom.css')}}">
+<link rel="stylesheet" href="{{ csslink('assets/css/responsive.css')}}">
+<link rel='stylesheet' href='{{ csslink('assets/css/lib/sweetalert2.min.css')}}'>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!--Arbic Language -->
+{% if lang('code') == 'ar' %}
+<link rel="stylesheet" href="{{ csslink('assets/css/style-rtl.css')}}">
+{% else %}
+<link rel="stylesheet" href="{{ csslink('assets/css/style-ltr.css')}}">
+{% endif %}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+<script src="{{ jslink('assets/js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{ jslink('assets/js/popper.min.js')}}"></script>
+{# {% if route == 'product/product' %}
+<script src="{{ jslink('js/external/jquery/jquery.min.js') }}"></script>
+{% endif %} #}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{{ jslink('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{ jslink('assets/js/AnimateHTML.js')}}"></script>
+<script src="{{ jslink('assets/js/jquery-ui.min.js')}}"></script>
+<script src="{{ jslink('assets/js/jquery.zoom.min.js')}}"></script>
+<script src="{{ jslink('assets/js/ui-carousel.js')}}"></script>
+<script src="{{ jslink('assets/js/main.js')}}"></script>
+
+{% for script in document_scripts %}
+<script type="text/javascript" src="{{ script }}"></script>
+{% endfor %}
+<script src="{{ jslink('assets/js/mega_filter.js')}}"></script>
+<!-- Inline Script:Start -->
+{% for script in inline_scripts %}
+{% if script['type'] == 'callable' %}
+{{ script['script']|base64_decode }}
+{% endif %}
+{% endfor %}
+<!-- Inline Script:End -->
+
+<!--[if IE]>
+	<style>
+		.inner-adv-color-info {
+			left:-30px;
+		}
+	</style>
+	<![endif]-->
+{{ google_analytics }}
+{% endblock linksHeader %}

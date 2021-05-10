@@ -1,0 +1,126 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+{% if success %}
+
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ success }}
+</div>
+{% endif %}
+
+{% if error_warning %}    
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ error_warning }}
+</div>
+{% endif %}
+<!-- breadcrumb -->
+<div class="page_header_color">
+        <div class="breadcramb aos-item">
+            <div class="container">
+            {% for breadcrumb in breadcrumbs %}
+            {% if not loop.last %}
+            <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+            {% else %}
+            <p>{{ breadcrumb['text'] }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <h4 class="category-page--title">
+            {% for breadcrumb in breadcrumbs %}{% if loop.last %}{{ breadcrumb['text'] }}{% endif %}{% endfor %}
+            </h4>
+</div>
+</div>
+<!-- breadcrumb -->
+<div id="content row" class="">    
+  
+    <!--- Start Post -->  
+    <div id="tt-pageContent">
+        <div class="container">
+            <div class="Blog-post Blog-post-category Blog-post-item">
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-md-10 col-lg-9 col-md-auto">
+      
+                        <div class="Blog-post--item">
+                            <div class="Blog-post--item--content--tag">                                        
+                                <a href="{{ link('blog/category', '&category_id=' ~ post['category_id'], 'SSL') }}">
+                                    {{ post['meta_description'] }}
+                                </a>
+                            </div>
+                            <div class="Blog-post--item--img">                                    
+                                <a href="{{ link('blog/post', '&post_id=' ~ post['post_id'], 'SSL') }}">
+                                    <img src="{{ image(post['post_image']) }}" alt="{{ post['name'] }}">                                </a>
+                            </div>
+                            <div class="Blog-post--item--content">
+              
+                                <div class="Blog-post--item--content--meta">
+                                    <div class="Blog-post--item--content--meta--autor">
+                                        <!-- by <span>ADRIAN</span> -->
+                                        {{ post['created_at']|date("m/d/Y") }}
+                                    </div>
+                                    <!-- <div class="tt-comments">
+                                        <a href="#"><i class="tt-icon icon-f-88"></i>7</a>
+                                    </div> -->
+                                </div>
+                                <div class="Blog-post--item--content--description">
+                                    {{ post['content'] }} 
+                                </div>
+                            </div>
+                        </div>
+                        {{ include('restaurant/template/blog/_CommentBlog.expand') }}
+                    </div>
+                    {{ include('restaurant/template/blog/_SideBarBlogs.expand') }}
+
+                </div>
+            </div>
+        </div>    
+        {% if relatedPosts %}
+        <div class="container-indent">
+            <div class="">
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-md-10 col-lg-9 col-md-auto">
+                      
+                        <div class="Blog-post--item">
+                            <div class="Blog-post--item--content--tag">                                        
+                                <a href="{{ link('blog/category', '&category_id=' ~ post['category_id'], 'SSL') }}">
+                                    {{ post['meta_description'] }}
+                                </a>
+                            </div>
+                            <div class="Blog-post--item--img">                                    
+                                <a href="{{ link('blog/post', '&post_id=' ~ post['post_id'], 'SSL') }}">
+                                    <img src="{{ image(post['post_image']) }}" alt="{{ post['name'] }}">                                </a>
+                            </div>
+                            <div class="Blog-post--item--content">
+              
+                                <div class="Blog-post--item--content--meta">
+                                    <div class="Blog-post--item--content--meta--autor">
+                                        <!-- by <span>ADRIAN</span> -->
+                                        {{ post['created_at']|date("m/d/Y") }}
+                                    </div>
+                                    <!-- <div class="tt-comments">
+                                        <a href="#"><i class="tt-icon icon-f-88"></i>7</a>
+                                    </div> -->
+                                </div>
+                                <div class="Blog-post--item--content--description">
+                                    {{ htmlEntityDecode(post['description'])|slice(0, 249) }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ include('restaurant/template/blog/_CommentBlog.expand') }}
+
+                    </div>
+
+                    {{ include('restaurant/template/blog/_SideBarBlogs.expand') }}
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+    <!--End Post -->   
+</div>
+
+{% endblock %}

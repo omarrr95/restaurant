@@ -1,0 +1,61 @@
+{% set featured_categories = getCategoryAndChilds(fields['categories']['field_value'], 500, 500) %}
+{% if fields.sectiontype.field_value == 'getLatestProducts' %}
+{% set sliderProducts = getLatestProducts(6, 350, 350) %}
+
+{% elseif fields.sectiontype.field_value == 'getBestSellerProducts' %}
+{% set sliderProducts = getBestSellerProducts(6, 350, 350) %}
+
+{% elseif fields.sectiontype.field_value == 'getSpecialProducts' %}
+{% set sliderProducts = getSpecialProducts(6, 350, 350) %}
+
+{% elseif fields.sectiontype.field_value == 'getProductsByCategoryId' %}
+{# {% set allFeaturedCategories = getFeaturedCategories(fields['categories']['field_value'], 350, 350) %}
+{% set Cats = allFeaturedCategories|length %} #}
+{% set sliderProducts = getProductsByCategoryId(fields['categories']['field_value'], 20, 350, 350, 1) %}
+
+{% elseif fields.sectiontype.field_value == 'getFeaturedProducts' %}
+{% set sliderProducts = getFeaturedProducts(fields['products']['field_value'], 350, 350) %}
+
+{% endif %}
+{% set items_count = sliderProducts|length %}
+{% if items_count > 0 %}
+<section class="home-category" id="home-category">
+	<div class="container">
+		{% if fields.displaysectiontitle.field_value == 1%}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-title">
+					<h2>{{fields.sectiontitle.field_value}}</h2>
+					<p>{{fields.sectiondescription.field_value}}</p>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+
+			<div class="container">
+				<div class="home-category--home-silder owl-carousel owl-carousel owl-theme">
+					{% for featured_category in featured_categories %}
+					{% set categoryProducts = getProductsByCategoryId(featured_category['category_id'], items , 350, 350,true) %}
+			
+					{% set items_products = categoryProducts|slice(0,8) %}
+					{% for item_product in items_products %}
+					<div class="category-sec--single item">
+						{{ include('restaurant/template/Shared/_itemProduct.expand') }}
+
+				   </div>
+						{% endfor %}
+						{% endfor %}
+
+					</div>
+					<!-- <test1></test1> -->
+				<!-- <test></test> -->
+				</div>
+
+</section>
+
+{% endif %}
+<script>
+
+	
+</script> 

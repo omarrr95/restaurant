@@ -1,0 +1,3 @@
+<a onclick="addToWishList({{ product.product_id }})" class="wishlist  add-To-Wishlist {{ in_wishlist == 1 ? 'active removeFromWishlist' : 'addToWishlist'}}" product-id="{{product_id}}">
+    <i class="far fa-heart"></i>
+</a>

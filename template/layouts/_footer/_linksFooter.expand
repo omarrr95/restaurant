@@ -1,0 +1,29 @@
+{% block linksFooter %}
+<script src="{{ jslink('assets/js/sweetalert2.all.min.js')}}"></script>
+<script type="text/javascript" src="{{ jslink('assets/js/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ jslink('assets/js/theme.js') }}"></script>
+<!--  Common - ExpandCart Default 		-->
+<script type="text/javascript" src="{{ jslink('assets/js/common.js') }}"></script>
+<script type="text/javascript" src="{{ jslink('assets/js/main.js') }}"></script>
+
+
+<form id="contact-form" action="{{ link('information/contact') }}" method="POST" enctype="multipart/form-data">
+	<input type="hidden" name="no-validate" value="1" />
+	<input type="hidden" name="name" value="{{ (customer.getFirstname() ~ ' ' ~ customer.getLastname())|e }}" />
+	<input type="hidden" name="email" value="{{ customer.getEmail() }}" />
+	<input type="hidden" name="enquiry" />
+	<input type="hidden" name="captcha" />
+</form>
+<script type="text/javascript">
+	function contact_us(id) {
+		$('#contact-form input[name="enquiry"]').val($('#enquiry-' + id).html() + '\n');
+		$('#contact-form').submit();
+	}
+</script>
+
+{{ body_scripts }}
+{# user custom scripts #}
+{% if scripts %}
+{{ scripts }}
+{% endif %}
+{% endblock linksFooter %}

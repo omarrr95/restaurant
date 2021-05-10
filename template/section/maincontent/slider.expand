@@ -1,0 +1,49 @@
+
+<div id="Home-banner3">
+	<div id="carouselExampleControls3" class="carousel slide banner-slider" data-ride="carousel">
+	  <div class="carousel-inner">
+		{% for collection in collections %}
+
+		<div class="carousel-item">
+      
+			<div class="container">
+		 <div class="row">
+		
+		 <div class="col-6">
+		  <div class="carousel-caption">
+				<div class="banner-slider--carousel-item--container">
+		<h5 class="banner-slider--carousel-item--container--header">{{collection.bannerHeader.field_value}}</h5>
+		<p class="banner-slider--carousel-item--container--text">
+		  {{collection.bannerDescription.field_value}}
+	</p>
+		<a class="banner-slider--carousel-item--container--link" href="">{{collection.bannerlink.field_value}}</a>
+	  </div>
+	  </div>
+	  </div>
+	   <div class="col-6">
+		<div class="banner-slider--img-container">
+			<img class="d-block" src="{{collection.bannerImage.field_value}}"  alt="First slide">
+		 </div>
+		 </div>
+		 </div>
+	   
+		  
+	  </div>
+		</div>
+		{% endfor %}
+
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+	   <i class="fas fa-chevron-left"></i>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+	   <i class="fas fa-chevron-right"></i>
+	  </a>
+	</div>
+	
+	</div>
+	<script>
+		$( document ).ready(function() {
+		$("#Home-banner3 .carousel-item:first-child").addClass("active");
+	  });
+		</script>

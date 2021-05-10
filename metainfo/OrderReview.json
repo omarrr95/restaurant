@@ -1,0 +1,229 @@
+{
+    "code": "OrderReview",
+    "name": "Home Section",
+    "type": ["available", "live"],
+    "state": "enabled",
+    "is-collection": 1,
+    "description": {
+        "name": "@locales.order",
+        "description": "@locales.order",
+        "collection-name": "@locales.order",
+        "item-name": "@locales.order",
+        "button-name": "@locales.order",
+        "image": "N/A",
+        "thumbnail": "N/A"
+    },
+    "fields": [
+        {
+            "code": "orderFisrtHeader",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.orderFisrtHeader",
+                "description": "",
+                "value": "Order in just 30 minutes"
+            }
+        },
+        {
+            "code": "orderSecondHeader",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.orderSecondHeader",
+                "description": "",
+                "value": "By clicking in 3 steps"
+            }
+        }
+    ],
+    "collections":[
+        {
+            "name": "My bannerblock",
+            "thumbnail": "N/A",
+            "is-default": 1,
+    "fields": [
+        {
+            "code": "orderImage",
+            "type": "image",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.orderImage",
+                "description": "",
+                "value": "data/custom-restaurant/food.svg"
+            }
+        },
+        {
+            "code": "orderHeader",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.orderHeader",
+                "description": "",
+                "value": "Order your food"
+            }
+        },       
+        {
+            "code": "orderDescription",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.orderDescription",
+                "description": "",
+                "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor inviduntl"
+            }
+        }      
+    ]
+},
+{
+    "name": "My bannerblock2",
+    "thumbnail": "N/A",
+    "is-default": 0,
+"fields": [
+{
+    "code": "orderImage",
+    "type": "image",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderImage",
+        "description": "",
+        "value": "data/custom-restaurant/recipe.svg"    }
+},
+{
+    "code": "orderHeader",
+    "type": "text",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderHeader",
+        "description": "",
+        "value": "delivery Pickup"
+    }
+},       
+{
+    "code": "orderDescription",
+    "type": "text",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderDescription",
+        "description": "",
+        "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt"
+    }
+}      
+]
+},
+{
+    "name": "My bannerblock3",
+    "thumbnail": "N/A",
+    "is-default": 0,
+"fields": [
+{
+    "code": "orderImage",
+    "type": "image",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderImage",
+        "description": "",
+        "value": "data/custom-restaurant/delivery.svg"
+    }
+},
+{
+    "code": "orderHeader",
+    "type": "text",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderHeader",
+        "description": "",
+        "value": "Delicious recipe"
+    }
+},       
+{
+    "code": "orderDescription",
+    "type": "text",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderDescription",
+        "description": "",
+        "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt"
+    }
+}        
+]
+},
+{
+    "name": "My bannerblock4",
+    "thumbnail": "N/A",
+    "is-default": 0,
+"fields": [
+{
+    "code": "orderImage",
+    "type": "image",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderImage",
+        "description": "",
+        "value": "data/custom-restaurant/food.svg"
+    }
+},
+{
+    "code": "orderHeader",
+    "type": "text",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderHeader",
+        "description": "",
+        "value": "Order your food"
+    }
+},       
+{
+    "code": "orderDescription",
+    "type": "text",
+    "option-id": "",
+    "multi-lang": "1",
+    "description": {
+        "name": "@locales.orderDescription",
+        "description": "",
+        "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor inviduntl"
+    }
+}      
+]
+}
+],
+    "locales": {
+        "en": {
+            "order": "order",   
+            "orderImage":"Image",
+            "orderHeader":"order Header",
+            "orderHeader_val":"Today’s Special",
+            "orderDescription_val": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren",
+            "orderDescription":"order Description",
+            "orderFirstHeader":"order First Header",
+            "orderSecondHeader":"order Second Header",
+            "orderlink":"Link",
+            "orderlink_val":"Order Now",
+            "orderImage_val":"data/custom-restaurant/order.png"          
+        },
+        "ar": {
+            "order": "الاوردر",    
+            "orderImage":" صورة ",
+            "orderFirstHeader":"عنوان الاوردر الاول",
+            "orderSecondHeader":"عنوان الاوردر الثانى",
+            "orderHeader":"عنوان الاوردر",
+            "orderHeader_val":"عرض اليوم",
+            "orderDescription":"تفاصيل الاوردر",
+            "orderDescription_val":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren",
+            "orderlink":"الرابط",
+            "orderlink_val":"اطلب الان",
+            "orderImage_val":"data/custom-restaurant/order.png"
+        }
+    }
+}

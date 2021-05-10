@@ -1,0 +1,205 @@
+// @font-face {
+//     font-family: 'Montserrat-ExtraBold';
+//     font-style: normal;
+//     font-weight: normal;
+//     // src: url('../../assets/fonts/Montserrat-ExtraBold.otf') format('otf');
+// }
+.ImgContainer img {
+    width: 100%;
+}
+@media only screen and (min-width: 768px) {
+.show-in-mobile-only {
+    display: none !important;
+}
+}
+body,
+html {
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Montserrat-ExtraBold';*/
+}
+body {
+    padding: 0 !important;
+}
+.cart-page-form .cart-content--footer {
+    display: none;
+}
+a:hover,a:focus {
+    text-decoration: none;
+}
+.p-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.m-30 {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.owl-carousel {
+    display: block
+}
+
+.tab-pane.fade.active.in {
+    opacity: 1;
+}
+@import "_mixin";
+@import "_colors";
+@import "layout/nav/HeaderTop";
+@import "layout/nav/HeaderMiddle";
+@import "layout/nav/HeaderBottom";
+@import "layout/footer/FooterTop";
+@import "layout/footer/FooterBottom";
+@import "pages/_ProductCategory";
+@import "pages/_advancedFilter";
+@import "pages/Home/_banner";
+@import "pages/Home/_OrdersReview";
+@import "pages/Home/_HomeCategory";
+@import "pages/Home/_review";
+@import "pages/cart/_cart";
+@import "pages/Blogs/Blog";
+@import "Account/wishlist";
+@import "pages/search/search";
+@import "responsive";
+body{
+    @include scroll;
+    /*font-family: 'Montserrat-ExtraBold';*/
+}
+.loginjs__modal-container .modal-dialog-centered .modal-content .modal-footer .login-js__btn-submit {
+    background-color: $main-color !important;
+}
+.btn-continue {
+    @include button-style
+}
+.oldPrice {
+    text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 12px;
+}
+.NewPrice {
+    font-size: 14px;
+}
+.contact-us {
+    width: 90%;
+    margin:0 auto 30px;
+    p {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    label {
+        font-size: 12px;
+    }
+    .btn-continue {
+        width: 100%;
+        line-height: 45px;
+    }
+    .form-control {
+        font-size: 13px;
+    }
+}
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+.m-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+.start-0-end-30 {
+    padding-#{$start}: 0;
+    padding-#{$end}: 30px;
+}
+.start-30-end-0 {
+    padding-#{$end}: 0;
+    padding-#{$start}: 30px;
+}
+@media only screen and (min-width: 768px) {
+.start-15-end-50 {
+    padding-#{$start}: 15px;
+    padding-#{$end}: 50px;
+}
+.start-50-end-15 {
+    padding-#{$end}: 15px;
+    padding-#{$start}: 50px;
+}
+}
+p {
+    font-weight: 400;
+}
+.text-end {
+    text-align: $end;
+}
+.pull-#{$end} {
+    float: $end !important;
+}
+.pull-#{$start} {
+    float: $start !important;
+}
+.text-end {
+    text-align: $end !important;
+}
+.btn-register ,
+.btn-login{
+    @include button-style;
+}
+.dropdown {
+    .dropdown-menu {
+        padding: 0;
+        .dropdown-item {
+            font-size: 13px;
+            line-height: 23px;
+            padding: 4px 12px;
+            &.active, &:active {
+                background-color: $second-color;
+            }
+        }
+
+       
+    }
+}
+
+.breadcramb {
+    background-color: $second-color;
+    padding: 4px 0 6px;
+    margin-bottom: 20px;
+    a {
+        display: inline-block;
+        color: #fff;
+        span {
+            display: inline-block;
+            margin: 0 0px;
+            color: #fff;
+            font-size: 15px;
+            line-height: 35px;
+            text-decoration: underline;
+        }
+       
+        &:after {
+            position: relative;
+            content:'>';
+            color: #fff;
+            margin: 0 10px;
+          
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    p {
+        display: inline-block;
+        margin: 0 0px;
+        color: #fff;
+        font-size: 15px;
+        line-height: 35px;
+    }
+}

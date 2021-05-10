@@ -1,0 +1,10 @@
+<div class="input-group Search-part" id="search">
+    <input type="text" class="form-control search-input" name="search" 
+    placeholder="{{ lang('text_search') }}" value="{{ search }}" aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+    <div class="input-group-append">
+         <button class="search-button button-search btn btn-link btn-sm" type="button">
+    <img src="{{asset('assets/images/icon/search.svg')}}">
+    </button>
+    </div>
+</div>

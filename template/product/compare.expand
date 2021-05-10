@@ -1,0 +1,6 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+<div class="container">
+{{ include('manymore/template/product/compare.expand') }}
+</div>
+{% endblock %}

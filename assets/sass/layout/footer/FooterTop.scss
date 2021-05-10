@@ -1,0 +1,77 @@
+.footer-top {
+    background-color: #333;
+    color: #fff;
+    padding: 35px 0;
+    .footer-top--footer-list {
+        h6 {
+            margin-bottom: 30px;
+            font-weight: 400;
+            font-size: 13px;
+            i {
+                display: none;
+            }
+        }
+        .subcribe-form {
+          
+            input {
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 1px solid #6b6b6b;
+                border-#{$end}:none;
+                border-radius: 0;
+                font-size: 14px;
+                color: #fff;
+                height: 39px;
+            }
+            .input-group-text {
+                background-color: $second-color;
+                color: #fff;
+                border-color: $second-color;
+            }
+        }
+        .footer-top--footer-list--container-footer {
+.footer-top--footer-list--container-footer--item ,
+.footer-top--footer-list--container-footer--item-contact{
+    margin-bottom: 10px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #fff;
+    a {
+        font-size: 12px;
+        color: #fff;
+    }
+}
+.footer-top--footer-list--container-footer--item-contact {
+    display: table;
+    width: 100%;
+        img {
+            display: inline-table;
+            width: 18px;
+            margin-right: 10px;
+    }
+    a {
+        display: inline-table;
+        width: calc(100% - 30px);
+        text-decoration: underline;
+    }
+}
+        }
+        .footer-top--footer-list--social {
+            @include ul-list;
+            li {
+                margin: 0 5px;
+                a {
+                    color: #fff;
+                    font-size: 13px;
+                }
+            }
+            
+        }
+        .footer-top--footer-list--social-title {
+            margin-bottom: 5px;
+            line-height: 16px;
+            font-size: 13px;
+            color: #fff;
+        }
+    }
+   
+}

@@ -1,0 +1,298 @@
+{
+    "code": "slider",    
+    "name": "slider collection",
+    "type": ["available", "live"],
+    "state": "enabled",
+    "is-collection": 1,
+    "description": {
+        "name": "@locales.banner",
+        "description": "@locales.banner",
+        "collection-name": "@locales.banner",
+        "item-name": "@locales.banner",
+        "button-name": "Add banner",
+        "image": "N/A",
+        "thumbnail": "N/A"
+    },
+    "collections":[
+        {
+            "name": "My bannerblock",
+            "thumbnail": "N/A",
+            "is-default": 1,
+            "fields":[
+                {
+                    "code": "bannerImage",
+                    "type": "image",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerImage",
+                        "description": "",
+                        "value": "@locales.bannerImage_val"
+                    }
+                },
+                {
+                    "code": "bannerHeader",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerHeader",
+                        "description": "",
+                        "value": "@locales.bannerHeader_val"
+                    }
+                },       
+                {
+                    "code": "bannerDescription",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerDescription",
+                        "description": "",
+                        "value": "@locales.bannerDescription_val"
+                    }
+                },                                                         
+                {
+                    "code": "bannerlink",
+                    "type": "link",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerlink",
+                        "description": "",
+                        "value": "@locales.bannerlink_val"
+                    }
+                }   
+            ]
+        },
+        {
+            "name": "My bannerblock 1",
+            "thumbnail": "N/A",
+            "is-default": 0,
+            "fields":[
+                {
+                    "code": "bannerImage",
+                    "type": "image",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerImage",
+                        "description": "",
+                        "value": "@locales.bannerImage_val"
+                    }
+                },
+                {
+                    "code": "bannerHeader",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerHeader",
+                        "description": "",
+                        "value": "@locales.bannerHeader_val"
+                    }
+                },       
+                {
+                    "code": "bannerDescription",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerDescription",
+                        "description": "",
+                        "value": "@locales.bannerDescription_val"
+                    }
+                },                                                         
+                {
+                    "code": "bannerlink",
+                    "type": "link",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerlink",
+                        "description": "",
+                        "value": "@locales.bannerlink_val"
+                    }
+                }   
+            ]
+        },
+        {
+            "name": "My bannerblock 2",
+            "thumbnail": "N/A",
+            "is-default": 0,
+            "fields":[
+                {
+                    "code": "bannerImage",
+                    "type": "image",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerImage",
+                        "description": "",
+                        "value": "@locales.bannerImage_val"
+                    }
+                },
+                {
+                    "code": "bannerHeader",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerHeader",
+                        "description": "",
+                        "value": "@locales.bannerHeader_val"
+                    }
+                },       
+                {
+                    "code": "bannerDescription",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerDescription",
+                        "description": "",
+                        "value": "@locales.bannerDescription_val"
+                    }
+                },                                                         
+                {
+                    "code": "bannerlink",
+                    "type": "link",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerlink",
+                        "description": "",
+                        "value": "@locales.bannerlink_val"
+                    }
+                }   
+            ]
+        },
+        {
+            "name": "My bannerblock 3",
+            "thumbnail": "N/A",
+            "is-default": 0,
+            "fields":[
+                {
+                    "code": "bannerImage",
+                    "type": "image",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerImage",
+                        "description": "",
+                        "value": "@locales.bannerImage_val"
+                    }
+                },
+                {
+                    "code": "bannerHeader",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerHeader",
+                        "description": "",
+                        "value": "@locales.bannerHeader_val"
+                    }
+                },       
+                {
+                    "code": "bannerDescription",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerDescription",
+                        "description": "",
+                        "value": "@locales.bannerDescription_val"
+                    }
+                },                                                         
+                {
+                    "code": "bannerlink",
+                    "type": "link",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerlink",
+                        "description": "",
+                        "value": "@locales.bannerlink_val"
+                    }
+                }   
+            ]
+        },
+        {
+            "name": "My bannerblock 4",
+            "thumbnail": "N/A",
+            "is-default": 0,
+            "fields":[
+                {
+                    "code": "bannerImage",
+                    "type": "image",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerImage",
+                        "description": "",
+                        "value": "@locales.bannerImage_val"
+                    }
+                },
+                {
+                    "code": "bannerHeader",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerHeader",
+                        "description": "",
+                        "value": "@locales.bannerHeader_val"
+                    }
+                },       
+                {
+                    "code": "bannerDescription",
+                    "type": "text",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerDescription",
+                        "description": "",
+                        "value": "@locales.bannerDescription_val"
+                    }
+                },                                                         
+                {
+                    "code": "bannerlink",
+                    "type": "link",
+                    "option-id": "",
+                    "multi-lang": "1",
+                    "description": {
+                        "name": "@locales.bannerlink",
+                        "description": "",
+                        "value": "@locales.bannerlink_val"
+                    }
+                }   
+            ]
+        }
+        
+],
+"locales": {
+    "en": {
+        "banner": "Banner",   
+        "bannerImage":"Image",
+        "bannerHeader":"Banner Header",
+        "bannerHeader_val":"Today’s Special",
+        "bannerDescription_val": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren",
+        "bannerDescription":"Banner Description",
+        "bannerlink":"Link",
+        "bannerlink_val":"Order Now",
+        "bannerImage_val":"data/custom-restaurant/banner.png"          
+    },
+    "ar": {
+        "banner": "البانر",    
+        "bannerImage":" صورة ",
+        "bannerHeader":"عنوان البانر",
+        "bannerHeader_val":"عرض اليوم",
+        "bannerDescription":"تفاصيل البانر",
+        "bannerDescription_val":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren",
+        "bannerlink":"الرابط",
+        "bannerlink_val":"اطلب الان",
+        "bannerImage_val":"data/custom-restaurant/banner.png"
+    }
+}
+}

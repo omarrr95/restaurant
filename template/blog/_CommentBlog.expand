@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-12 blog-social">
+        <ul class="pull-right">
+            <li>share this entry</li>
+            {{ include('restaurant/template/Shared/_SocialMedia.expand') }}
+        </ul>
+    </div>
+</div>
+{% if showComments %}
+<div class="container-indent">
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-10 col-lg-12 col-md-auto">
+                <h6 class="category-page--title">comment</h6>
+                    {% for comment in comments %}                            
+                    <div class="comment-item">
+                        <div class="comment-item--container">
+                            <div class="tt-avatar"></div>
+                            <div class="comment-item--container--content">
+                                <div class="comment-item--container--content--title">
+                                    <p class="username">{{ comment['name'] }}</p>
+                                    <p class="time">{{ comment['created_at'] }}</p>
+                                </div>
+                                <p class="comment-item--container--content--comment">
+                                    {{ comment['comment']|nl2br }}
+                                </p>                                        
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+</div>
+{% endif %}
+{% if enableCommenting %}
+<div class="container-indent">
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-10 col-lg-12 col-md-auto">
+                <div class="form-comment">
+                    <h6 class="category-page--title">{{ lang('blog_add_comment') }}</h6>
+                    <div class="form-default">
+                        <form class="row" action="{{ link('blog/comment/submit', '&post_id=' ~ post['post_id'], 'SSL') }}" method="post">
+                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName" class="control-label">Name <span>*</span></label>                                        
+                                <input type="text" name="comment[name]" class="form-control" id="inputName"
+                                placeholder="{{ lang('entry_name') }}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputEmail" class="control-label">Email <span>*</span></label>
+                                <input type="email" class="form-control" id="inputEmail" name="comment[email]"
+                                placeholder="{{ lang('entry_email') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea" class="control-label">Comment <span>*</span></label>
+                                <textarea class="form-control"  name="comment[comment]" rows="8"
+                                id="textarea" placeholder="{{ lang('entry_comment') }}" ></textarea>                                        
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <button type="submit" class="Btn-comment pull-right">{{ lang('button_send') }}</button>                                        
+                            </div>
+                        </div>
+                            <input type="hidden" name="comment[customer_id]" value="{{ customer_id }}" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endif %}

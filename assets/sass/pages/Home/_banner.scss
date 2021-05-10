@@ -1,0 +1,52 @@
+.banner-slider {
+    .carousel-control-prev, .carousel-control-next {
+        i {
+            color: #000;
+            font-size: 24px;
+        }
+        width: 5%;
+    }
+    .banner-slider--img-container {
+        padding: 15 0px;
+    text-align: center;
+    height: 420px;
+    img {
+        max-height: 100%;
+        width: auto;
+    }
+    }
+    .carousel-caption {
+        height: 100%;
+        vertical-align: middle; 
+        width: 100%;
+        #{$start}: 16px;
+        .banner-slider--carousel-item--container {
+            padding-top: 80px;
+            height: 100%;
+            text-align: start;
+            // display: table-cell;
+        .banner-slider--carousel-item--container--header,
+        .banner-slider--carousel-item--container--text {
+          
+            color: #000
+        }
+        .banner-slider--carousel-item--container--header {
+            font-size: 32px;
+            width: 60%;
+            line-height: 40px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        .banner-slider--carousel-item--container--text {
+            font-size: 12px;
+            width: 70%;
+        }
+        .banner-slider--carousel-item--container--link {
+           @include button-style;
+           display: inline-block; 
+           min-width: 160px;
+           line-height: 45px;
+        }
+    }
+}
+}

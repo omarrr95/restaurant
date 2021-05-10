@@ -1,0 +1,21 @@
+<li>
+    {% if footer_data.footerSocialMedia.fields.FaceBookSM.value != ''%}
+    <a class="Social" href="{{footer_data.footerSocialMedia.fields.FaceBookSM.value}}">
+        <i class="fab fa-facebook-f"></i>
+                                        </a>
+</li>
+    {% endif %}
+    {% if footer_data.footerSocialMedia.fields.TwitterSM.value != ''%}
+    <li>
+    <a class="Social" href="{{footer_data.footerSocialMedia.fields.TwitterSM.value}}">
+        <i class="fab fa-twitter"></i>
+     </a>
+</li>
+    {% endif %}
+    {% if footer_data.footerSocialMedia.fields.InstagramSM.value != ''%}
+    <li>
+    <a class="Social" href="{{footer_data.footerSocialMedia.fields.InstagramSM.value}}">
+        <i class="fab fa-instagram"></i>
+         </a>
+</li>
+    {% endif %}

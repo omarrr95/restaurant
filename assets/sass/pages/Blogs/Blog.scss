@@ -1,0 +1,186 @@
+
+.Blog-post {
+    .Blog-post--item {
+        .Blog-post--item--content--tag {
+            a {
+             min-width: 80px;
+             background-color: #a9cc75;
+             display: inline-block;
+             margin:1px 0 5px;
+             text-align: center;
+             color: #000;
+             font-size: 13px;
+             line-height: 27px;
+            }
+         }
+        .Blog-post--item--img {
+            height: 230px;
+            overflow: hidden;
+            margin-bottom: 5px;
+            img {
+              width: 100%;
+              min-height: 100%;
+            }
+        }
+        .Blog-post--item--content {
+            margin-bottom: 25px;
+         
+            .Blog-post--item--content--title {
+                font-size: 18px;
+                margin: 5px 0;
+               a {
+                color: #000;
+                font-size: 18px;
+                font-weight: 400;
+               }
+            }
+            .Blog-post--item--content--description {
+                font-size: 12px;
+                margin-bottom: 10px;
+                p {
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    span {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+            .Blog-post--item--content--meta {
+                margin: 10px 0;
+                font-size: 14px;
+                .Blog-post--item--content--meta--autor {
+
+                }
+            }
+            .Blog-post--item--btn {
+                display: inline-block;
+                margin-bottom: 10px;
+                a {
+                     color: $main-color;
+                     font-size: 12px;
+                     i {
+                        color: $main-color;
+                        font-size: 10px;
+                        margin-#{$start}: 5px;
+                        position: relative;
+                        top: 1px;
+                     }
+                     &.focus {
+                         outline: none;
+                     }
+                }
+            }
+        }
+    }
+    &.Blog-post-category {
+        .Blog-post--item {
+            .Blog-post--item--img {
+                height: 280px;
+            }
+        }
+    }
+    &.Blog-post-item {
+        .Blog-post--item {
+            .Blog-post--item--img {
+                height: auto;
+                max-height: 400px;
+            }
+            .Blog-post--item--content {
+                .Blog-post--item--content--meta {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+.blog-aside {
+    .blog-aside-title {
+        font-weight: 400;
+        font-size: 15px;
+        text-transform: capitalize;
+        margin-bottom: 15px;
+        &.mt-style {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ededed;
+        }
+    }
+    .blog-aside-content {
+        .blog-aside-content--post {
+            .Tags-container {
+                .tags {
+                    display: inline-block;
+                    padding: 4px 15px;
+                    background-color: #888;
+                    color: #fff;
+                    font-size: 13px;
+                    margin-#{$end}: 5px;
+                    margin-bottom: 5px;
+                }
+            }
+            .item {
+                margin-bottom: 5px;
+                a {
+           color: #333;
+           font-size: 13px;
+                }
+            }
+        }
+    
+    }
+    
+}
+.blog-social {
+    margin-bottom: 30px;
+    ul {
+        @include ul-list;
+        li {
+            margin-#{$start}: 10px;
+            font-size: 12px;
+            a {
+                color: #000;
+            }
+        }
+    }
+}
+.comment-item {
+    .comment-item--container {
+        .comment-item--container--content {
+            .comment-item--container--content--title {
+                margin-bottom: 5px;
+                p {
+                    margin-bottom: 4px;
+                    font-size: 13px;
+                }
+                .username {
+
+                }
+                .time {
+
+                }
+            }
+            .comment-item--container--content--comment {
+                color: #999;
+                font-size: 12px;
+            }
+        }
+    }
+}
+.form-comment {
+    margin-bottom: 30px;
+    label {
+        font-size: 13px;
+        span {
+       color: #f00
+        }
+    }
+    .form-control {
+       font-size: 14px;
+       border-radius: 0;
+    }
+    .Btn-comment {
+        @include button-style;
+        min-width: 150px;
+        line-height: 40px;
+    }
+}

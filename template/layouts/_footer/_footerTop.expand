@@ -1,0 +1,100 @@
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- List -->
+                    <div class="footer-top--footer-list">
+            <div class="row">
+                       
+                        {% if footer_data.footerFixedLink1.section_state == 'enabled' %}
+                        <div class="col-md-3">
+                            <h6 onclick="CollapseFooter(this)">{{ footer_data.footerFixedLink1.fields.Title.value }} <i
+                                    class="fas fa-plus pull-right"></i></h6>
+                            <div class="footer-top--footer-list--container-footer">
+                                {% for collection in footer_data.footerFixedLink1.collections %}
+                                <p class="footer-top--footer-list--container-footer--item">
+                                    <a href=
+                                    "{{ 'http://' in collection.itemlink.value or 'https://' in collection.itemlink.value ? collection.itemlink.value : link(collection.itemlink.value) }}">
+                                    {{ collection.itemname.value }}</a></p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if footer_data.footerFixedLink2.section_state == 'enabled' %}
+                        <div class="col-md-3">
+                            <h6 onclick="CollapseFooter(this)">{{ footer_data.footerFixedLink2.fields.Title.value }} <i
+                                    class="fas fa-plus pull-right"></i></h6>
+                            <div class="footer-top--footer-list--container-footer">
+                                {% for collection in footer_data.footerFixedLink2.collections %}
+                                <p class="footer-top--footer-list--container-footer--item">
+                                    <a href=
+                                    "{{ 'http://' in collection.itemlink.value or 'https://' in collection.itemlink.value  ? collection.itemlink.value : link(collection.itemlink.value) }}">
+                                    {{ collection.itemname.value }}</a></p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if footer_data.footerContacts.section_state == 'enabled' %}
+                        <div class="col-md-3">
+                            <h6 onclick="CollapseFooter(this)">{{ lang('contacts') }}<i
+                                    class="fas fa-plus pull-right"></i></h6>
+                            <div class="footer-top--footer-list--container-footer">
+                                {% if footer_data.footerContacts.fields.contactsAddress.value != '' %}
+                                <p class="footer-top--footer-list--container-footer--item-contact">
+                                    <img src="{{ asset('assets/images/icon/location.svg') }}"> 
+                                    <a> {{ footer_data.footerContacts.fields.contactsAddress.value }}</a>
+                                </p>
+                                    
+                                {%endif%}
+                                {% if footer_data.footerContacts.fields.contactsPhone.value != '' %}
+                                <p class="footer-top--footer-list--container-footer--item-contact">
+                                    <img src="{{ asset('assets/images/icon/call.svg') }}">  
+                                 <a>   {{footer_data.footerContacts.fields.contactsPhone.value}}</a>
+                                </p>
+									{%endif%}
+
+									{% if footer_data.footerContacts.fields.contactsEmail.value != '' %}
+                                    <p class="footer-top--footer-list--container-footer--item-contact">
+                                     
+                                            <img src="{{ asset('assets/images/icon/email.svg') }}"> 
+                                            <a href="mailto:{{footer_data.footerContacts.contactsEmail.value}}">
+                                            {{footer_data.footerContacts.fields.contactsEmail.value}}</a> 
+                                    </p>
+									{%endif%}
+
+								
+                                {% for collection in footer_data.contact.collections %}
+                                <p class="footer-top--footer-list--container-footer--item">
+                                    {{ collection.itemname.value }}
+                                </p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="col-md-3">
+                            <h6 class="No-border">  {{ lang('Keep_in_touch') }}</h6>
+
+                            <div class="input-group mb-3 subcribe-form">
+      <input type="text" class="form-control" placeholder="Your email here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"><i class="fas fa-chevron-right"></i></span>
+      </div>
+    </div>
+                            {% if footer_data.footerSocialMedia.section_state == 'enabled' %}
+                            <p class="footer-top--footer-list--social-title">  {{ lang('Follow_us') }}</p>
+                            <ul class="footer-top--footer-list--social">
+                                {{ include('restaurant/template/Shared/_SocialMedia.expand') }}
+                        </ul>
+                           
+                            {% endif %}
+                      
+                        </div>
+                    </div>
+                </div>
+                    <!-- End List -->
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>

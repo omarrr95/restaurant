@@ -1,0 +1,25 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+<div id="content">
+        {% if not session_data.ismobile == 1 %}                
+         <!-- Breadcrumb --> 
+          
+                <div class="breadcramb aos-item">  
+                    <div class="container">
+                    {% for breadcrumb in breadcrumbs %}
+                    {% if not loop.last %}
+                    <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+                    {% else %}
+                    <p>{{ breadcrumb['text'] }}</p>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        <!-- Breadcrumb --> 
+        {% endif %}
+        <div class="checkout-style">
+            {{ quickcheckout }}
+        </div>
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{ lang('code') }}" class="{{ lang('direction') == 'rtl' ? 'cms-rtl' : '' }}">
+	{% use "restaurant/template/layouts/_head/_linksHeader.expand" %}
+	{% use "restaurant/template/layouts/_head/_header.expand" %}
+	{% use "restaurant/template/layouts/_nav/_nav.expand" %}
+	{% use "restaurant/template/layouts/_footer/_footer.expand" %}
+	{% use "restaurant/template/layouts/_footer/_linksFooter.expand" %}
+	
+	<!-- this for Header links -->
+	{% block header %}
+		{{ parent() }}
+	{% endblock header %}
+	{% if modules.socialslides.enabled %}{{ modules.socialslides.content }}{% endif %}
+	{% if modules.popupwindow.enabled %}{{ modules.popupwindow.content }}{% endif %}
+	<body >
+		
+		<!-- this for navbar -->
+		{% block nav %}
+		{% block nav_default %}
+			{{ parent() }}
+		{% endblock nav_default %}	
+		{% endblock nav %}
+		<div class="main-wrapper">
+			<div style="{{ is_home_page ? 'background-color:#FFF' : 'background-color:#fcfcfc;' }}" class="notific">
+				<div id="notification" class="container"></div>
+			</div>
+					{% if is_home_page %}
+					{{ regions_data.maincontent.content }}
+					{% elseif route == "product/category" %}
+					{% block contentCategory %}{% endblock contentCategory %}
+					{% else %}
+				<div class="">
+				<div class='row m-0'>
+						{% if modules.filter.enabled or (modules.mega_filter.enabled and modules.mega_filter.content != '') %}
+						<div class="col-md-3">
+							{{ regions_data.sidecontent.content }}
+							{% if (modules.mega_filter.enabled and modules.mega_filter.content != '') %}{{ modules.mega_filter.content }}{% endif %}
+							{% if modules.filter.enabled %}{{ modules.filter.content }}{% endif %}
+						</div>
+						{% endif %}
+					
+						<div id="content"
+							class="{{ modules.filter.enabled or (modules.mega_filter.enabled and modules.mega_filter.content != '') ? 'col-md-9 no-padding' : 'col-md-12 no-padding' }}">
+							<!-- this for content page Like (Home - product - catgory) -->
+							{% block content %}{% endblock content %}
+						</div>
+				</div>
+				</div>
+				{% endif %}
+			<div class="container bottom-content">
+			</div>
+			{#{% if integration_settings['mn_criteo_status'] %}
+				{{ include('spring/template/module/criteo/criteo_home.expand') }}
+			{% endif %}#}
+		</div>
+		<!-- this for footer section -->
+		{% block footer %}
+			{% block sectionFooter %}
+				{{ parent() }}
+			{% endblock sectionFooter %}
+		{% endblock footer %}
+
+		<!-- this for links script -->
+		{% block scriptsLink %}			
+			{% block linksFooter %}
+				{{ parent() }}
+			{% endblock linksFooter %}
+		{% endblock scriptsLink %}
+    </body>
+
+</html>

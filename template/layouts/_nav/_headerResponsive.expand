@@ -1,0 +1,29 @@
+<ul class="show-in-mobile-only Header-responsive">
+    <li class=""><a onclick="OpenMobileMenu()"><img src="{{ asset('assets/images/icon/nav.svg') }}"></a></li>
+
+    <li class=""><a onclick="OpenMobileSearch()"><img src="{{ asset('assets/images/icon/searchRes.svg') }}"></a></li>
+    <div class="header-middle--ul-search--search-container--mobile">
+        <div class="CloseSearch" onclick="CloseSearch()"><i class="fas fa-times"></i></div>
+        {{ include('restaurant/template/layouts/_nav/_SearchTop.expand') }}
+    
+    </div>
+    <li class=""> <a href="{{ link('account/register', '', 'SSL') }}" class="user-part--account-btn">
+        <img src="{{ asset('assets/images/icon/userRes.svg') }}"></a></li>
+        <li><a class="user-part--wish-list-btn" href="{{ link('account/wishlist') }}"><img src="{{ asset('assets/images/icon/heart.svg') }}"></a></li>
+
+
+
+<li class="responsive-count">
+        <a onclick="OpenCart(this)" class="header-middle--ul-cart--cart-count">
+            <img src="{{ asset('assets/images/icon/bag.svg') }}">
+            <p class="header-middle--ul-cart--cart-count--number" id="counterLabel">{{ cart.countProducts() }}</p>
+        </a>
+        <div class="header-middle--ul-cart--cart-details" style="display: none;">
+            <div class="OverLay">
+            </div>
+            {{ include('restaurant/template/layouts/_nav/_cartContent.expand') }}
+
+           
+        </div>
+</li>
+</ul>

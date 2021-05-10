@@ -1,0 +1,37 @@
+<div class="home-review" id="Home-review">
+      
+        <div class="container">
+     <div class="row">
+    
+     <div class="col-md-6">
+      <div class="review-slider">
+            <div class="review-slider--container">
+    <h5 class="review-slider--container--header">{{fields.reviewHeader.field_value}}</h5>
+    <div class="review-slider--img-container show-in-mobile-only">
+      <img class="d-block" src="{{fields.reviewImage.field_value}}">
+   </div>
+    <p class="review-slider--container--text">
+      {{fields.reviewDescription.field_value}}
+</p>
+    <div class="review-slider--container--user-review">
+      <img src="{{fields.reviewImageUser.field_value}}"  alt="First slide">
+      <div class="review-slider--container--user-review--information">
+        <h5> {{fields.reviewUser.field_value}}</h5>
+        <h6> {{fields.reviewUserTitleJob.field_value}}</h6>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+   <div class="col-md-6">
+    <div class="review-slider--img-container hide-in-mobile-only">
+        <img class="d-block" src="{{fields.reviewImage.field_value}}">
+     </div>
+     </div>
+     </div>
+   
+      
+  </div>
+
+</div>
+

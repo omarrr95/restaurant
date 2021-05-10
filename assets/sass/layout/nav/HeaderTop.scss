@@ -1,0 +1,37 @@
+header > .header-top {
+    background-color: #333333;
+    color: #fff;
+    padding: 2px 0px 5px;
+    nav .header-top--social-part {
+        @include ul-list ;
+        > li{
+            .Social {
+                color: #fff;
+                font-size: 13px;
+            }
+            i {
+                width: 22px;
+            }
+            .header-top--social-part--social-label {
+                margin-#{$end}: 20px;
+            }
+        }
+    }
+    nav .user-part {
+        @include ul-list ;
+ > li {
+    font-size: 13px;
+    margin-#{$start}: 20px;
+    > a {
+        color: #fff;
+    }
+    .user-part--account-btn  {
+        color: #fff;
+    }
+    .user-part--wish-list-btn {
+        color: #fff;
+        font-size: 15px;
+    }
+ }
+}
+}

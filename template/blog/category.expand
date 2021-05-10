@@ -1,0 +1,51 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+{% if success %}
+<br>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{ success }}
+    </div>
+    {% endif %}
+    <!-- breadcrumb -->
+    <div class="page_header_color">
+     
+            <div class="breadcramb aos-item"> 
+                  <div class="container">
+                {% for breadcrumb in breadcrumbs %}
+                {% if not loop.last %}
+                <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+                {% else %}
+                <p>{{ breadcrumb['text'] }}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container">
+
+        <h4 class="category-page--title">
+            {% for breadcrumb in breadcrumbs %}{% if loop.last %}{{ breadcrumb['text'] }}{% endif %}{% endfor %}
+            </h4>
+    </div>
+</div>
+    <!-- breadcrumb -->
+    <div id="content row" class="">
+        <!-- Start Category -->
+        <div id="tt-pageContent">                
+        <div class="container">
+                            <div class="Blog-post Blog-post-category">
+                                <div class="row">
+                                    {% for post in categoryPosts %}
+                                    <div class="col-sm-6">
+                                        {{ include('restaurant/template/blog/_ItemBlog.expand') }}
+
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>        
+    </div>        
+    </div>
+    <!-- End Category -->   
+</div>
+
+{% endblock %}

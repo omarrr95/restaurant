@@ -1,0 +1,47 @@
+
+.header-middle{
+     padding: 20px 0 15px;
+
+.row > ul {
+     @include ul-list ;
+     padding: 0 15px;
+     &.header-middle--ul-search {
+          .header-middle--ul-search--search-container {
+               border: 1px solid #ccc;
+               background-color: #fff;
+               input {
+                    border: none;
+                    font-size: 13px;
+                    padding: 0 7px;
+                    width: 220px;
+                    &:focus,
+                    &:hover {
+                         border: none;
+                         box-shadow: none;
+                         outline: none;
+                    }
+               }
+               .input-group-append {
+                    .button-search {
+                         padding: 3px;
+                         line-height: 13px;
+                    img {
+                         width: 17px;
+                    }
+               }
+               }
+          }
+     }
+   &.header-middle--ul-logo {
+          .header-middle--ul-logo--logo-text {
+               margin-bottom: 0;
+               position: relative;
+               top: -5px;
+               color: #000;
+          }
+     }
+     &.header-middle--ul-cart {
+       @include cart-count-img;
+     }
+    }
+}

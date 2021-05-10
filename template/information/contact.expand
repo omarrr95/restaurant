@@ -1,0 +1,123 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+<!-- breadcrumb -->
+<div class="page_header_color">
+   
+        <div class="breadcramb aos-item"> 
+            <div class="container">
+            {% for breadcrumb in breadcrumbs %}
+            {% if not loop.last %}
+            <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+            {% else %}
+            <p>{{ breadcrumb['text'] }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+   
+</div>
+<!-- breadcrumb -->
+<div class="container">
+<div class="contact-us">
+    <h4 class="category-page--title">
+        {% for breadcrumb in breadcrumbs %}{% if loop.last %}{{ breadcrumb['text'] }}{% endif %}{% endfor %}
+        </h4>
+<div id="content">
+
+
+    <form action="{{ link('information/contact') }}" id="contactForm" method="post" enctype="multipart/form-data">
+        <div class="">
+            <div class="row">
+           <div class="col-md-12 mb-3">
+            <p class="mb-2">{{ lang('text_location') }}</p>
+                    
+            <p>
+               {{ lang('text_address') }}  {{ store }}  {{ address }}
+            </p>
+            {% if telephone %}
+            <p>
+              {{ lang('text_telephone') }}  {{ telephone }}
+            </p>
+            {% endif %}
+            {% if fax %}
+            <p>
+                {{ lang('text_fax') }} {{ fax }}
+            </p>
+            {% endif %}
+           </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- block  contact-->
+                    <div class="block-contact-us">
+                        <div class="block-content row">
+                            <div class="col-sm-6 start-15-end-50">
+                                <div class="form-group {{ error_name ? 'text-danger' : '' }}">
+                                    <label for="name">{{ lang('entry_name') }}</label>
+                                    <input type="text" placeholder="{{ lang('entry_name') }}" class="form-control" id="name" name="name" value="{{ name }}" />
+                                    {% if error_name %}
+                                    <div class="text-danger">{{ error_name }}</div>
+                                    {% endif %}
+                                </div>
+                                <div class="form-group {{ error_email ? 'text-danger' : '' }}">
+                                    <label for="email">{{ lang('entry_email') }}</label>
+                                    <input type="text" placeholder="{{ lang('entry_email') }}" class="form-control" id="email" name="email" value="{{ email }}" />
+                                    {% if error_email %}
+                                    <div class="text-danger">{{ error_email }}</div>
+                                    {% endif %}
+                                </div>
+                                {% if client_phone_number_show %}
+                                <div class="form-group {{ error_phone ? 'text-danger' : '' }}">
+                                    <label for="phone_number">{{ lang('entry_phone') }}</label>
+                                    <input type="text" placeholder="{{ lang('entry_phone') }}" class="form-control" id="phone" name="phone" value="{{ phone }}" />
+                                    {% if error_phone %}
+                                    <div class="text-danger">{{ error_phone }}</div>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                                
+
+                            </div>
+                            <div class="col-sm-6 start-50-end-15">
+                                <div class="form-group {{ error_enquiry ? 'text-danger' : '' }}">
+                                    <label for="enquiry">{{ lang('your_comment') }}</label>
+                                    <textarea rows="7" class="form-control" id="enquiry" name="enquiry">{{ enquiry }}</textarea>
+                                    {% if error_enquiry %}
+                                    <div class="text-danger">{{ error_enquiry }}</div>
+                                    {% endif %}
+                                </div>
+                                <div class="{{ lang('direction') == 'rtl' ? 'text-left' : 'text-right' }}">
+                                    {% if (recaptcha['status'] == 1 and recaptcha['page_enabled_status'] == 1 )%}
+                                        <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha['site-key']  }}" type="text/javascript"></script>
+                                        <script>
+                                            grecaptcha.ready(function () {
+                                                grecaptcha.execute("{{ recaptcha['site-key'] }}", { action: '{{ recaptchaAction }}' }, { score: '0' }).then(function (token) {
+                                                    var recaptchaResponse = document.getElementById('recaptchaResponse');
+                                                    recaptchaResponse.value = token;
+                                                });
+
+                                            });
+                                        </script>
+                                        <button onclick="onSubmit()" type="submit" class="g-recaptcha btn-continue border-0 pr-5 pl-5 " data-callback='onSubmit'
+                                                data-sitekey="{{ recaptcha['site-key'] }}"
+                                        >{{ lang('Send_message') }}</button>
+                                    {% else %}
+                                        <button class="btn-continue border-0 pr-5 pl-5" type="submit">{{ lang('Send_message') }}</button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div><!-- block  contact-->
+
+                    </div>
+                </div>
+
+               
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

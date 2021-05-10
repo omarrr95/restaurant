@@ -1,0 +1,111 @@
+{
+    "code": "featuredProducts",
+    "name": "section Product Slider",
+    "type": ["available", "live"],
+    "state": "enabled",
+    "is-collection": 0,
+    "description": {
+        "name": "@locales.featuredProducts",
+        "description": "@locales.sectionProduct",
+        "collection-name": "TEST8",
+        "item-name": "@locales.sectionProduct",
+        "button-name": "@locales.sectionProduct",
+        "image": "N/A",
+        "thumbnail": "N/A"
+    },
+    "fields": [
+        {
+            "code": "sectiontitle",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.featuredProducts_sectiontitle",
+                "description": "",
+                "value": "@locales.featuredProducts_sectiontitle_val"
+            }
+        },    
+        {
+            "code": "sectiondescription",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.featuredProducts_sectiondescription",
+                "description": "",
+                "value": "@locales.featuredProducts_sectiondescription_val"
+            }
+        },     
+           
+        {
+            "code": "displaysectiontitle",
+            "type": "checkbox",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.featuredProducts_displaysectiontitle",
+                "description": "",
+                "value": "1"
+            }
+        },
+        {
+            "code": "sectiontype",
+            "type": "sselect-lookup",
+            "option-id": "blockFN",            
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.productslide_sectiontype",
+                "description": "",
+                "value": "getLatestProducts"
+            }
+        },
+        {
+            "code": "categories",
+            "type": "tags-category",
+            "option-id": "", 
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.productslide_categories",
+                "description": "",
+                "value": "0,0,0"
+            }
+        },
+        {
+            "code": "products",
+            "type": "tags-product",
+            "option-id": "", 
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.productslide_products",
+                "description": "",
+                "value": "0,0,0,0,0"
+            }
+        }
+    ],
+    "locales": {
+        "en": {
+            "featuredProducts": "Featured Product",
+            "featuredProducts_sectiontitle": "Section Title",
+            "featuredProducts_sectiontitle2":"title two",
+            "featuredProducts_sectiontitle_val": "Popular Food",
+            "featuredProducts_sectiondescription_val": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+            "featuredProducts_sectiontitle2_val":"TOP VIEW IN THIS WEEK",
+            "featuredProducts_displaysectiontitle": "Display Section Title",
+            "productslide_sectiontype":"select type section",
+            "productslide_categories":"categories",
+            "productslide_products":"products"
+        },
+        "ar": {
+            "featuredProducts": "منتجات القسم",
+            "featuredProducts_sectiontitle": "عنوان القسم",
+            "featuredProducts_sectiontitle2":"العنوان الثاني",
+            "featuredProducts_sectiontitle_val": "العروض الشائعة",
+            "featuredProducts_sectiondescription_val": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+            "featuredProducts_sectiontitle2_val":"أعلى عرض في هذا الأسبوع",
+            "featuredProducts_displaysectiontitle": "عرض عنوان القسم",
+            "productslide_sectiontype":"اختر نوع القسم",
+            "productslide_categories":"الاقسام",
+            "productslide_products":"منتجات"
+        }
+    }
+}

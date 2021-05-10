@@ -1,0 +1,6 @@
+    <div class="dec qtybutton" onclick="event.preventDefault(); subtractFromCart('{{ product['key'] }}'); return false;">-</div>
+    <input type="text" class="notControl cart-plus-minus-box" key-cart="{{ product['key'] }}" value="{{ product['quantity'] }}" placeholder=""
+    aria-label="Example text with button addon" name="quantity[{{ product['key'] }}]"
+    aria-describedby="button-addon1">
+    <div class="inc qtybutton" onclick="event.preventDefault();
+    increaseCart('{{ product['key'] }}'); return false;">+</div>

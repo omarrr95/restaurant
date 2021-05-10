@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+   
+    <div class="col-md-6">
+     <div class="carousel-caption">
+           <div class="banner-slider--carousel-item--container">
+   <h5 class="banner-slider--carousel-item--container--header">${slide.bannerHeader.field_value}</h5>
+   <p class="banner-slider--carousel-item--container--text">
+     ${slide.bannerDescription.field_value}
+</p>
+   <a class="banner-slider--carousel-item--container--link" href="">${slide.bannerlink.field_value}</a>
+ </div>
+ </div>
+ </div>
+  <div class="col-md-6">
+   <div class="banner-slider--img-container">
+       <img class="d-block" :src="slide.bannerImage.field_value"  alt="First slide">
+    </div>
+    </div>
+    </div>
+  
+     
+ </div>

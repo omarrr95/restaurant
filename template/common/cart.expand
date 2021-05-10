@@ -1,0 +1,53 @@
+<form class="cart-form">
+    <div class="cart-content cartDropList " id="cartDropList">
+        <div class="cart-content--header">
+            <!-- <a class="CloseSideAll btn btn-danger mx-4" style="color: white;">
+                {{lang('delete_all')}}
+            </a> -->
+            <a onclick="closecart()" class="close-cart show-in-mobile-only">
+                {{lang('Close')}}
+            </a>
+          <p>  {{ lang('YourShopingCart') }}</p>
+          
+            
+        </div>
+        {% if cart_items_count > 0 %}
+        <div class="cart-content--body">
+            {% for product in products %}
+            <div class="cart-content--body--item--container">
+            <div class="cart-content--body--item">
+                <a class="action delete delete-mini-cart-item icon-close" id="{{ product.key }}"
+                    title="{{ lang('button_remove') }}"><img class="cart-content--body--item--remove" src="{{asset('assets/images/icon/delete.svg')}}" /></a>
+                {% if product.thumb != '' %}
+                <img class="cart-content--body--item--img" src="{{ product.thumb }}"  alt="{{ product.name }}">
+                {% endif %}
+                <div class="cart-content--body--item--details">
+                    <a href="{{ product.href }}">
+                    <h5>{{ product.name }}</h5>
+                    </a>
+                    <p><span class="count">{{ product['quantity'] }} X </span><span>{{ product.price }}</span></p>
+                </div>
+            </div>
+            <div class="cart-plus-minus">
+                {{ include('restaurant/template/checkout/Count_Cart.expand') }}
+        </div>
+        </div>
+            {% endfor %}
+        </div>
+        <div class="cart-content--footer">
+            {% for total in totals %}
+            <div class="cart-content--footer--sub-total">
+                <p>{{ total.title }}: <span class="pull-right">{{ total.text }}</span></p>
+            </div>
+            {% endfor %}
+            <!-- <a class="view-cart" href="{{ link('checkout/cart') }}" title="{{ lang('text_cart') }}">{{ lang('text_cart') }}</a> -->
+            <a class="checkout" href="{{ link('checkout/checkout', '', 'SSL') }}" title="{{ lang('text_checkout') }}">{{ lang('text_checkout') }}</a>
+            <a class="cart-content--footer--shopping" href="{{ link('common/home') }}">{{lang('button_shopping')}}</a>
+
+        </div>
+        {% else %}
+        <p style="padding: 20px;" class="text-center">{{lang('text_empty_message')}} 
+            <a href="/" class="toHomePage">{{lang('text_empty_message_2')}}</a></p>
+        {% endif %}
+    </div>
+</form>

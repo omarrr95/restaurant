@@ -1,0 +1,35 @@
+<div class="SectionInformation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 Sec col-xs-12">
+                <img src="{{fields.Image1.field_value}}">
+                <h6>
+                    {{fields.Title1.field_value}}
+                </h6>
+                <p>
+                    {{fields.Text1.field_value}}
+                </p>
+            </div>
+            <div class="col-md-4 Sec col-xs-12">
+                <img src=" {{fields.Image2.field_value}}">
+                <h6>
+                    {{fields.Title2.field_value}}
+                </h6>
+                <p>
+                    {{fields.Text2.field_value}}
+                </p>
+            </div>
+            <div class="col-md-4 Sec col-xs-12">
+                <img src=" {{fields.Image3.field_value}}">
+                <h6>
+                    {{fields.Title3.field_value}}
+                </h6>
+                <p>
+                    {{fields.Text3.field_value}}
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</div>

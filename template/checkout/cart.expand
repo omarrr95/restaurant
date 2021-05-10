@@ -1,0 +1,313 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+{{ script('js/jquery/colorbox/jquery.colorbox-min.js') }}
+{{ style('js/jquery/colorbox/colorbox.css') }}
+
+
+<!-- {% if success %}
+<br>
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    {{ success }}
+</div>
+{% endif %} -->
+    <!-- breadcrumb -->
+    <div class="page_header_color">
+
+        <div class="breadcramb aos-item">
+            <div class="container">
+
+                {% for breadcrumb in breadcrumbs %}
+                {% if not loop.last %}
+                <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+                {% else %}
+                <p>{{ breadcrumb['text'] }}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+            </div>
+        <div class="container">
+            <div class="loader page_holder"></div>
+{% if attention %}
+<br>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    {{ attention }}
+</div>
+{% endif %}
+{% if error_warning %}
+<br>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    {{ error_warning }}
+</div>
+{% endif %}
+        </div>
+
+    </div>
+    <!--- New Cart -->
+    <div class="site-section">
+        <div class="container">
+            <form class="cart-form" id="cart-form" action="{{ link('checkout/cart') }}" method="post"
+            class="col-md-12"  enctype="multipart/form-data">   
+            <div class="row mb-5">
+               <div  class="col-md-8 start-0-end-30">
+              
+                    <div class="cart-content cartDropList">
+                          <h5 class="cart-content--header">
+                    {{ lang('YourShopingCart') }}
+                    {% if weight %}
+                    &nbsp;({{ weight }})
+                    {% endif %}
+                          </h5>
+                        <div class="cart-content--body">
+                            {% for product in products %}
+                            <div class="cart-content--body--item--container">
+                            <div class="cart-content--body--item">
+                                {% if product['thumb'] %}
+
+                                <img class="cart-content--body--item--img" src="{{ product['thumb'] }}" alt="{{ product['name'] }}">
+                                {% endif %}
+                                <div class="cart-content--body--item--details">
+                                  
+                                    <h5 >  <a href="{{ product['href'] }}">{{  product['name'] }}</a>
+                                        <a class="action delete delete-mini-cart-item icon-close pull-right" href="{{ product['remove'] }}"
+                                        title="{{ lang('button_remove') }}">
+                                        <img class="cart-content--body--item--remove" src="{{asset('assets/images/icon/delete.svg')}}" /></a>
+                                    </h5>
+                                    <p>{{ product['details'] }}</p>
+                                    {% if review_status != '' and config('config_review_status') == '1' %}
+                                    <!-- <div clvass="rating-action" style="margin-bottom: 5px;"> -->
+                                    <img src="{{ asset('image/stars-' ~ rating ~ '.png') }}" width="65px"
+                                        alt="{{ lang('text_reviews')|format(reviews_count) }}" />&nbsp;&nbsp;
+                                    <!-- </div>  -->
+                                    {% endif %}
+                                    {% for option in product['option'] %}
+                                    <p>{{ option['name'] }}: {{ option['value'] }}</p>
+                                   {% endfor %}
+                                    <p><span class="count">{{ product['quantity'] }} X </span> <span>{{ product['price'] }}</span></p>
+                                    <h6 class="mt-3">{{ product['total'] }}</h6>
+                                </div>
+                            </div>
+                            <div class="cart-plus-minus">
+                            {{ include('restaurant/template/checkout/Count_Cart.expand') }}
+                        </div>
+                    </div>
+                            {% endfor %}
+                        </div>
+               
+                    </div>
+                </div>
+          
+                <div class="col-md-4 cart-page start-30-end-0">
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <h5 class="text-black cart-page--header--cart">{{lang('Cart_Totals')}}</h5>
+                        </div>
+                    </div>
+                    <div class="box-cart">
+                    {% for total in totals|slice(0,-1) %}   
+                    <div class="row box-cart--sub-total m-0">  
+                        <p>{{ total['title'] }} <span class="pull-right">{{ total['text'] }}</span></p>                                                           
+                    </div>
+                    {% endfor %}
+
+                    {% for total in totals|slice(-1) %}
+                    <div class="row m-0 box-cart--total">  
+                        <p>{{ total['title'] }} <span class="pull-right">{{ total['text'] }}</span></p>                                                           
+                    </div>
+                    {% endfor %}
+                </div>
+                    <div class="row mt-3 box-cart--Checkout">   
+                        <div class="col-6">  
+                         <a class="box-cart--Checkout--btnCheckout" href="{{ link('common/home') }}">{{lang('button_shopping')}}</a>
+                        </div>
+                        <div class="col-6">  
+                    <a class="box-cart--Checkout--btnCheckout" href="{{ link('checkout/checkout', '', 'SSL') }}">
+                        {{ lang('button_checkout') }}
+                    </a>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-3">
+         
+                </div>
+                <!-- <div class="col-md-3 mb-3 mb-md-0">
+                    <a href="#" onclick="event.preventDefault();$('#cart-form').submit();"
+                        class="border btnUpdateCart">{{lang('update_cart')}}</a>
+                </div> -->
+                
+           </div>
+            </form>
+        </div>
+    </div>
+    <!-- /NewCart -->
+
+
+<script type="text/javascript">
+$(document).on('change', '.qty-input', function () {
+        $(this).val($(this).val())
+        
+            $('#cart-form').submit();
+        
+
+    })
+    $('input[name=\'next\']').bind('change', function () {
+        $('.cart-module > div').hide();
+
+        $('#' + this.value).show();
+    });
+</script>
+{% if shipping_status %}
+<script type="text/javascript">
+    $(document).on('click', '#button-quote', function () {
+        $.ajax({
+            url: 'index.php?route=checkout/cart/quote',
+            type: 'post',
+            data: 'country_id=' + $('select[name=\'country_id\']').val() + '&zone_id=' + $('select[name=\'zone_id\']').val() + '&postcode=' + encodeURIComponent($('input[name=\'postcode\']').val()),
+            dataType: 'json',
+            beforeSend: function () {
+                $('#button-quote').attr('disabled', true);
+                $('#button-quote').after('<span class="wait">&nbsp;<img src="expandish/view/theme/clearion/image/loading.gif" alt="" /></span>');
+            },
+            complete: function () {
+                $('#button-quote').attr('disabled', false);
+                $('.wait').remove();
+            },
+            success: function (json) {
+                $('.success, .warning, .attention, .error').remove();
+
+                if (json['error']) {
+                    if (json['error']['warning']) {
+                        $('#notification').html('<div class="warning" style="display: none;">' + json['error']['warning'] + '<img src="expandish/view/theme/clearion/image/close.png" alt="" class="close" /></div>');
+
+                        $('.warning').fadeIn('slow');
+
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                    }
+
+                    if (json['error']['country']) {
+                        $('select[name=\'country_id\']').after('<span class="error">' + json['error']['country'] + '</span>');
+                    }
+
+                    if (json['error']['zone']) {
+                        $('select[name=\'zone_id\']').after('<span class="error">' + json['error']['zone'] + '</span>');
+                    }
+
+                    if (json['error']['postcode']) {
+                        $('input[name=\'postcode\']').after('<span class="error">' + json['error']['postcode'] + '</span>');
+                    }
+                }
+
+                if (json['shipping_method']) {
+                    html = '<h2>{{ lang('text_shipping_method') }}</h2>';
+                    html += '<form action="{{ link('checkout / cart') }}" method="post" enctype="multipart/form-data">';
+                    html += '  <table class="radio">';
+
+                    for (i in json['shipping_method']) {
+                        html += '<tr>';
+                        html += '  <td colspan="3"><b>' + json['shipping_method'][i]['title'] + '</b></td>';
+                        html += '</tr>';
+
+                        if (!json['shipping_method'][i]['error']) {
+                            for (j in json['shipping_method'][i]['quote']) {
+                                html += '<tr class="highlight">';
+
+                                if (json['shipping_method'][i]['quote'][j]['code'] == '{{ shipping_method }}') {
+                                    html += '<td><input type="radio" name="shipping_method" value="' + json['shipping_method'][i]['quote'][j]['code'] + '" id="' + json['shipping_method'][i]['quote'][j]['code'] + '" checked="checked" /></td>';
+                                } else {
+                                    html += '<td><input type="radio" name="shipping_method" value="' + json['shipping_method'][i]['quote'][j]['code'] + '" id="' + json['shipping_method'][i]['quote'][j]['code'] + '" /></td>';
+                                }
+
+                                html += '  <td><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['title'] + '</label></td>';
+                                html += '  <td style="text-align: right;"><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['text'] + '</label></td>';
+                                html += '</tr>';
+                            }
+                        } else {
+                            html += '<tr>';
+                            html += '  <td colspan="3"><div class="error">' + json['shipping_method'][i]['error'] + '</div></td>';
+                            html += '</tr>';
+                        }
+                    }
+
+                    html += '  </table>';
+                    html += '  <br />';
+                    html += '  <input type="hidden" name="next" value="shipping" />';
+
+                    {% if shipping_method %}
+                    html += '  <input type="submit" value="{{ lang('button_shipping') }}" id="button-shipping" class="btn btn-inline" />';
+                    {% else %}
+				html += '  <input type="submit" value="{{ lang('button_shipping') }}" id="button-shipping" class="btn btn-inline" disabled="disabled" />';
+                {% endif %}
+							
+				html += '</form>';
+
+    $.colorbox({
+        overlayClose: true,
+        opacity: 0.5,
+        width: '600px',
+        height: '400px',
+        href: false,
+        html: html
+    });
+
+    $('input[name=\'shipping_method\']').bind('change', function () {
+        $('#button-shipping').attr('disabled', false);
+    });
+			}
+		}
+	});
+});
+</script>
+<script type="text/javascript">
+    $('select[name=\'country_id\']').bind('change', function () {
+        $.ajax({
+            url: 'index.php?route=checkout/cart/country&country_id=' + this.value,
+            dataType: 'json',
+            beforeSend: function () {
+                $('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="expandish/view/theme/clearion/image/loading.gif" alt="" /></span>');
+            },
+            complete: function () {
+                $('.wait').remove();
+            },
+            success: function (json) {
+                if (json['postcode_required'] == '1') {
+                    $('#postcode-required').show();
+                } else {
+                    $('#postcode-required').hide();
+                }
+
+                html = '<option value="">{{ lang('text_select') }}</option>';
+
+                if (json['zone'] != '') {
+                    for (i = 0; i < json['zone'].length; i++) {
+                        html += '<option value="' + json['zone'][i]['zone_id'] + '"';
+
+                        if (json['zone'][i]['zone_id'] == '{{ zone_id }}') {
+                            html += ' selected="selected"';
+                        }
+
+                        html += '>' + json['zone'][i]['name'] + '</option>';
+                    }
+                } else {
+                    html += '<option value="0" selected="selected">{{ lang('text_none') }}</option>';
+                }
+
+                $('select[name=\'zone_id\']').html(html);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
+
+    $('select[name=\'country_id\']').trigger('change');
+</script>
+{% endif %}
+{% endblock %}

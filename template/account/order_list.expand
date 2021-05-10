@@ -1,0 +1,75 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+<!-- breadcrumb -->
+<div class="page_header_color">
+    <div class="container">
+        <div class="breadcramb aos-item">
+            {% for breadcrumb in breadcrumbs %}
+            {% if not loop.last %}
+            <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+            {% else %}
+            <p>{{ breadcrumb['text'] }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <h2 class="text-center" style="padding: 0 0 70px 0;">
+        {% for breadcrumb in breadcrumbs %}{% if loop.last %}{{ breadcrumb['text'] }}{% endif %}{% endfor %}
+    </h2>
+</div>
+<!-- breadcrumb -->
+<div id="content" class="container">
+    <div class="page-title-base">
+        <h1 class="title-base">{{ lang('heading_title') }}</h1>
+    </div>
+
+    <div class="row">
+    {% if orders %}
+        {% for order in orders %}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <p>
+                            <div class="order-list">
+                                <div class="order-id"><b>{{ lang('text_order_id') }}</b> #{{ order['order_id'] }}</div>
+                                <div class="order-status"><b>{{ lang('text_status') }}</b> {{ order['status'] }}</div>
+                                <div class="order-content">
+                                  <div><b>{{ lang('text_date_added') }}</b> {{ order['date_added'] }}<br />
+                                    <b>{{ text_products }}</b> {{ order['products'] }}</div>
+                                  <div><b>{{ lang('text_customer') }}</b> {{ order['name'] }}<br />
+                                    <b>{{ lang('text_total') }}</b> {{ order['total'] }}</div>
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="{{ order['href'] }}" class="btn btn-primary" role="button">{{ lang('button_view') }}</a> 
+                            
+                            {% if custom_invoice_ostatus and order['order_status_id'] == custom_invoice_ostatus %}
+                                <a href="{{ order['order_custom_invoice'] }}" class="btn btn-warning" role="button">{{ lang('button_order_custom_invoice') }}</a>
+                            {% else %}
+                                {% if not order['is_returned'] %}
+                                    <a href="{{ order['reorder'] }}" class="btn btn-primary" role="button">{{ lang('button_reorder') }}</a>
+                                {% endif %}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="pagination">{{ pagination }}</div>
+    {% else %}
+        <div class="content container"><div class="alert alert-warning">{{ lang('text_empty') }}</div></div>
+    {% endif %}
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <a href="{{ link('account/account', '', 'SSL') }}" class="btn-continue">{{ lang('button_continue') }}</a>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+{% endblock %}

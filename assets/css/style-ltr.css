@@ -1,0 +1,13 @@
+:root {
+    --MainColor: #a11806;
+    --Secondolor: #5a9601;
+  }
+header > .header-top nav .header-top--social-part .header-top--social-part--social-label {
+    margin-right: 20px;
+}
+.text-end {
+  text-align: right;
+}
+.text-start {
+  text-align: left;
+}

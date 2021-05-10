@@ -1,0 +1,451 @@
+
+@media (min-width: 2000px) {
+    .container {
+        max-width: 1520px;
+        padding: 0 60px;
+    }
+}
+@media (min-width: 991px) {
+    .bannerSec {
+        height: 550px;
+        min-height: 300px;
+    }
+    .featureSec {
+        min-height: 400px;
+    }
+    .videoSec {
+        min-height: 290px;
+    }
+}
+@media (max-width:1024px) {
+.MenuNav .TopNav .main_nav .UserNav .input-group>input {
+    width: 450px;
+}
+}
+@media (max-width: 991px) {
+    .order1 {
+        order: 1;
+    }
+    .order2 {
+        order: 2;
+
+    }
+    .order3 {
+        order: 3;
+    }
+    .SectionInformation .Sec h6 {
+        font-size: 13px;
+    }
+
+    .SectionInformation .Sec p {
+        font-size: 10px;
+    }
+
+    .footer .footer-top .footer-list h6 i {
+        display: inline-block;
+    }
+    .bannerSec .BcakgroundImg{
+        height: auto;
+    }
+    .bannerSec {
+        margin-top: 15px;
+        height: auto;
+    }
+    .bannerSec .bannerSec {
+        min-height: 300px;
+        margin-top: 0;
+        border-radius: 0;
+    }
+    .main-wrapper {
+        margin-top: 0;
+    }
+    .homeSec .row, .FeaturedCategorySec .row {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+    .featureSec {
+        min-height: 170px;
+    }
+    .videoSec {
+        min-height: 250px;
+    }
+    .CategorySec .Sec .ImgContainer{
+        height: 176px;
+    }
+    .bannerSec .WordSec {
+        position: relative;
+        background-color: transparent;
+        top: 30%;
+        margin: 0px 0 0;
+        left: 0 !important;
+        right: 0 !important;
+        position: relative;
+        width: 100%;
+        background: #F8F7FF;
+        padding:25px 14px;
+    }
+    .bannerSec .WordSec h2 {
+        color: #000;
+        text-align: center;
+        font-size: 19px;
+        width: 90%;
+        margin: auto;
+        line-height: 25px;
+    }
+
+    .bannerSec .WordSec a {
+        color: #000;
+        border: 1px solid #000;
+        display: inline-block;
+        text-align: center;
+    }
+    .CategorySec .Sec .ContentSec p{
+        float: none !important;
+    }
+    .CategorySec .Sec .ContentSec .footerSec .AddToCart{
+        display: block;
+    }
+    .CategorySec .Sec .ContentSec .footerSec {
+        text-align: center;
+    }
+    .containerFooter {
+        display: none;
+    }
+
+    .footer .footer-top .footer-list .Social {
+        margin-bottom: 20px;
+    }
+
+    .SubscribeSec form h2 {
+        font-size: 19px;
+    }
+
+    .SubscribeSec {
+        padding: 25px 10px;
+    }
+
+    .BestSallerSec .Sec {
+        height: 300px;
+    }
+    .video-Section .video-container a.popup-btn {
+        width: 40px;
+    }
+    .video-Section .video-container img {
+        min-height: 250px;
+    }
+    .MenuNav .TopNav .main_nav .UserNav .input-group > input {
+        width: calc(100% - 42px);
+    }
+    .MenuNav .TopNav .main_nav .UserNav .input-group {
+        padding: 10px 9px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 95%;
+    }
+    .SearchContainer {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index:-1;
+        left: 0;
+        top: 0;
+        padding: 0 20px;
+        transform: scale(0.0);
+        transition: transform 0.5s;
+    }
+        .SearchContainer.active {
+            z-index: 99999;
+            transform: scale(1.0);
+            transition: transform 0.5s;
+        }
+    .MenuNav .TopNav .main_nav .UserNav .SearchContainer .CloseSearch {
+        display: block;
+        position: relative;
+        top: 10px;
+        margin: 0 10px;
+        font-size: 22px;
+        color: #fff;
+    }
+    .MenuNav .TopNav .main_nav .UserNav li {
+        margin: 0 5px -15px;
+    }
+    .MenuNav .TopNav .main_nav .LogoContent li a img {
+        height: 33px;
+    }
+    .MenuNav .TopNav .main_nav .LogoContent .logo-word {
+        font-size: 19px;
+    }
+    .MenuNav .TopNav .main_nav .UserNav li a img {
+        width: 18px;
+    }
+    .MenuNav .TopNav .main_nav .LogoContent {
+        text-align: center;
+    }
+    .MenuNav {
+        padding-left: 7px;
+        padding-right: 7px;
+        height: 55px;
+    }
+    .BtnNavMenu {
+        font-size: 23px;
+        color: #636363;
+        position: relative;
+        top: 5px;
+    }
+    .MenuNav .TopNav .main_nav .UserNav {
+        position: relative;
+        top: -6px;
+    }
+    .MenuNav .BottomNav ul{
+        position: fixed;
+        width: 85%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 999;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 10px;
+    }
+
+
+        .MenuNav .BottomNav ul li a:hover::after, .MenuNav .BottomNav ul li a.active::after,
+        .MenuNav .BottomNav ul li a::after {
+            display: none;
+        }
+        .MenuNav .BottomNav ul li,
+        .MenuNav .BottomNav ul li a {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .MenuNav .BottomNav ul li.categoryLink a,
+        .MenuNav .BottomNav ul li a {
+            padding: 5px 10px;
+        }
+            .MenuNav .BottomNav ul li a {
+                border-bottom: 1px solid #ededed;
+                
+                font-size: 15px;
+            }
+            .MenuNav .BottomNav ul li:last-child a {
+                border: none;
+            }
+            .MenuNav .BottomNav ul li a.active,
+            .MenuNav .BottomNav ul li a:hover:not(.CloseNavMenu) {
+                filter: brightness(90%);
+                color: #fff;
+                border: none;
+            }
+        .MenuNav .BottomNav .OverLay {
+            transition: all .5s;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            position: fixed;
+            z-index: 993;
+            background-color: #000;
+            opacity: .5;
+        }
+    .CloseNavMenu {
+        display: block;
+        text-align: end;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+        .CloseNavMenu img {
+            width: 15px;
+        }
+
+        .breadcramb a {
+            font-size: 13px;
+        }
+        .breadcramb p {
+            font-size: 13px;
+        }
+        .breadcramb a:after {
+            margin: 0 2px;
+        }
+    header .header-main_area {
+        border-bottom: 1px solid #ccc;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 99;
+    }
+    .ProductSec .sliderImg .item {
+        height: 80px;
+        display: inline-block;
+        margin: 15px 4px 10px;
+    }
+    .ProductSec .Container_ReviewImg {
+        padding: 15px;
+    }
+      
+    .ProductSec .sliderImg .item img {
+        width: 80px;
+    }
+    .ProductSec .sliderImg {
+        display: flex;
+        max-width: 1000px;
+    }
+    .footer .footer-top .content-md {
+        padding: 15px;
+    }
+    .footer-bottom {
+        text-align: center;
+    }
+        .footer-bottom .pull-left,
+        .footer-bottom .pull-right {
+            float: unset;
+            width: 100%;
+            text-align: center;
+        }
+    .FeaturedCategorySec .Sec {
+        height: 150px;
+    }
+    .FeaturedCategorySec .Sec .WordSec h1 {
+        font-size: 20px;
+    }
+    .FeaturedCategorySec .Sec .WordSec a.ExploreBtn {
+        font-size: 14px;
+    }
+    .SubscribeSec,
+    .SubscribeSec form {
+        width: 95%;
+        overflow: hidden;
+        padding: 0 15px;
+    }.SubscribeSec form {
+            padding: 10px;
+        }
+    .titleSection h4 {
+        font-size: 18px;
+    }
+    .CategorySec .Sec .ContentSec h5{
+        font-size: 14px;
+    }
+    .CategorySec .Sec .ContentSec span{
+        font-size: 12px;
+    }
+    .CategorySec .col-6, .FeaturedCategorySec .col {
+        padding: 0 5px;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .categoryMenuLink:hover .dropdown-content{
+        width: 100%;
+            display: block;
+            position: static;
+            box-shadow: none;
+            padding: 0 24px;
+            background-color: #fff;
+    }
+    .MenuNav .TopNav .main_nav {
+        margin-top: 15px;
+    }
+    .MenuNav .BottomNav ul li::after {
+        display: none
+    }
+    .MenuNav .BottomNav ul li.active a{
+  background-color:  var(--MainColor);
+  color: #fff;
+    }
+    .MenuNav .BottomNav ul li {
+        height: auto;
+        margin-bottom: 0 !important;
+    }
+    .categoryMenuLink:after {
+        position: absolute;
+    top: 8px;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f078';
+    display: inline-block;
+    font-size: 11px;
+    z-index: 9;
+    font-weight: 900;
+    margin-right: 10px;
+    right: 0;
+    }
+    .CategorySec {
+        margin-top: 0;
+    }
+    .titleSection {
+        margin-top: 30px;
+    }
+    .site-blocks-table  .product-name h2{
+        font-size:14px;
+    }
+    .ProductSec .Container_ReviewDescription h2 {
+        font-size: 22px;
+    }
+    }
+@media (max-width: 480px) {
+    .SidebarContainer .SidebarContent {
+        width: 100%;
+    }
+    .ProductSec .Container_ReviewImg .ImgSlider_review img {
+        height: 250px;
+    }
+    .Container_Details ul.nav li.nav-item {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .bannerSec .bannerSec {
+        min-height: 360px;
+    }
+    .bannerSec .WordSec {
+        top:0;
+    }
+    .qc-table.qc-options .qc-col.qc-text:lang(en) {
+        width: 100% !important;
+        display: block !important;
+        text-align: left !important;
+    }
+    .qc-table.qc-options .qc-col.qc-text:lang(ar) {
+        width: 100% !important;
+        display: block !important;
+        text-align: right !important;
+    }
+    .action_remove{
+        padding: 0 !important;
+    }
+    .wishlist-info table .AddToCart{
+        min-width: 122px;
+    }
+    .ms-sellercontact-dialog.ms-jquery-dialog {
+        width: 90% !important;
+        margin: 5%;
+    }
+    .ms-jquery-dialog .ms-form label {
+        width: auto !important;
+    }
+}
+@media (max-width: 425px) {
+    
+    .CategorySec .Sec .ContentSec .footerSec .AddToCart{
+        padding:10px 0;
+        font-size: 12px;
+    }
+}
+@media (max-width: 380px) {
+    .MenuNav {
+        height: 81px;
+    }
+    .bannerSec {
+        margin-top: 23px;
+    }
+    .CategorySec {
+        margin-top: 0;
+    }
+}

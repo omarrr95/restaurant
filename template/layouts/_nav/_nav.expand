@@ -1,0 +1,8 @@
+{% block nav_default %}
+<header>
+    {{ include('restaurant/template/layouts/_nav/_headerResponsive.expand') }}
+    {{ include('restaurant/template/layouts/_nav/_headerTop.expand') }}
+    {{ include('restaurant/template/layouts/_nav/_headerMiddle.expand') }}
+    {{ include('restaurant/template/layouts/_nav/_headerBottom.expand') }}
+</header>
+{% endblock %}

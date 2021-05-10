@@ -1,0 +1,19 @@
+<div class="order-review" id="order-review">
+  <div class="container">
+  <h4 class="Header1">  {{ fields.orderFisrtHeader.field_value }}</h4>
+  <h5 class="Header2"> {{ fields.orderSecondHeader.field_value }}</h5>
+  <div class="row">
+    {% for collection in collections %}
+
+  <div class="col">
+     <div class="order-review--section">
+       <img src="{{collection.orderImage.field_value}}"/>
+       <h6> {{ collection.orderHeader.field_value }}</h6>
+       <p>{{ collection.orderDescription.field_value }}</p>
+     </div>
+  </div>
+  {% endfor %}
+
+  </div>
+  </div>
+    </div>

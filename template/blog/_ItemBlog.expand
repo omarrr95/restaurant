@@ -1,0 +1,35 @@
+<div class="Blog-post--item">
+    <div class="Blog-post--item--img">                                    
+        <a href="{{ link('blog/post', '&post_id=' ~ post['post_id'], 'SSL') }}">
+            <img src="{{ image(post['post_image']) }}" alt="{{ post['name'] }}">
+        </a>
+    </div>
+    <div class="Blog-post--item--content">
+        <div class="Blog-post--item--content--tag">                                        
+            <a href="{{ link('blog/category', '&category_id=' ~ post['category_id'], 'SSL') }}">
+                {{ post['category_name'] }}
+            </a>
+        </div>
+        <h2 class="Blog-post--item--content--title">
+            <a href="{{ link('blog/post', '&post_id=' ~ post['post_id'], 'SSL') }}">
+                {{ post['name'] }}
+            </a>
+        </h2>
+        <div class="Blog-post--item--content--meta">
+            <div class="Blog-post--item--content--meta--autor">
+                <!-- by <span>ADRIAN</span> -->
+                {{ post['created_at']|date("m/d/Y") }}
+            </div>
+            <!-- <div class="tt-comments">
+                <a href="#"><i class="tt-icon icon-f-88"></i>7</a>
+            </div> -->
+        </div>
+        <div class="Blog-post--item--content--description">
+            {{ post['description'] }}
+        </div>
+
+        <div class="Blog-post--item--btn">
+            <a href="{{ link('blog/post', '&post_id=' ~ post['post_id'], 'SSL') }}" class="btn btn_readMore p-0">{{ lang('Read_More') }} <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>

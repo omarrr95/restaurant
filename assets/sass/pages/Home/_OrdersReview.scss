@@ -1,0 +1,30 @@
+.order-review {
+    background-color: $second-color;
+    padding: 70px 0;
+    color: #fff;
+    text-align: center;
+    .Header1 {
+        font-size: 21px;
+        font-weight: 400;
+    }
+    .Header2 {
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 65px;
+    }
+    .order-review--section {
+        padding: 0 30px;
+        img {
+            width: 65px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 12px;
+        }
+        h6 {
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+    }
+}

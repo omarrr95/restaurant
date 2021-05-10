@@ -1,0 +1,1564 @@
+{
+    "template": "restaurant",
+    "theme_version": "1.1",
+    "uses_twig_extends": true,
+    "description": {
+        "name": "@locales.name",
+        "description": "",
+        "image": "data/custom-restaurant/restaurant.png",
+        "demo-url": "N/A"
+    },
+    "pages": [
+        {
+            "code": "home",
+            "description": {
+                "name": "@locales.page_home_name",
+                "description": ""
+            },
+            "regions": [
+                {
+                    "code": "maincontent",
+                    "col-order": 0,
+                    "row-order": 0,
+                    "col-width": 12,
+                    "description": {
+                        "name": "@locales.maincontent_name",
+                        "description": ""
+                    },
+                    "sections": [
+                        "slider",
+                        "OrderReview",
+                        "featuredProducts",
+                        "review"
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "general",
+            "description": {
+                "name": "@locales.page_general_name",
+                "description": ""
+            },
+            "regions": [
+                {
+                    "code": "maincontent",
+                    "col-order": -1,
+                    "row-order": -1,
+                    "col-width": -1,
+                    "description": {
+                        "name": "@locales.general_maincontent_name",
+                        "description": ""
+                    },
+                    "sections": []
+                },
+                {
+                    "code": "bottomcontent",
+                    "col-order": -1,
+                    "row-order": -1,
+                    "col-width": -1,
+                    "description": {
+                        "name": "@locales.bottomcontent_name",
+                        "description": ""
+                    },
+                    "sections": [
+                        "relatedProduct"
+                    ]
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "style": [
+            {
+                "code": "colors",
+                "name": "Colors",
+                "description": {
+                    "name": "@locales.colors_section",
+                    "description": "",
+                    "collection-name": "@locales.colors_section_name",
+                    "item-name": "@locales.colors_section_item_name",
+                    "button-name": "@locales.colors_section_button_name"
+                },
+                "collections": [
+                    {
+                        "name": "Colorset 1",
+                        "fields": [
+                            {
+                                "code": "MainColor",
+                                "type": "colorpicker",
+                                "option-id": "",
+                                "description": {
+                                    "name": "@locales.maincolor",
+                                    "description": "",
+                                    "value": "#ff053b"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "fonts",
+                "name": "Fonts",
+                "description": {
+                    "name": "@locales.fonts_section",
+                    "description": "",
+                    "collection-name": "@locales.fonts_section_collection_name",
+                    "item-name": "@locales.fonts_section_item_name",
+                    "button-name": "@locales.fonts_section_button_name"
+                },
+                "collections": [
+                    {
+                        "name": "Store Font",
+                        "fields": [
+                            {
+                                "code": "ArabicFonts",
+                                "type": "sselect-lookup",
+                                "option-id": "ArabicFonts",
+                                "description": {
+                                    "name": "@locales.arabic_font",
+                                    "description": "",
+                                    "value": "Cairo"
+                                }
+                            },
+                            {
+                                "code": "EnglishFonts",
+                                "type": "sselect-lookup",
+                                "option-id": "EnglishFonts",
+                                "description": {
+                                    "name": "@locales.english_font",
+                                    "description": "",
+                                    "value": "Montserrat"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "header": [
+            {
+                "code": "headerlogo",
+                "name": "header area",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 0,
+                "description": {
+                    "name": "@locales.headerlogo",
+                    "description": "",
+                    "collection-name": "",
+                    "item-name": "",
+                    "button-name": ""
+                },
+                "fields": [
+                    {
+                        "code": "headerlogo_Checkbox",
+                        "type": "checkbox",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.headerlogo_Checkbox_name",
+                            "description": "",
+                            "value": "1"
+                        }
+                    },
+                    {
+                        "code": "logoText",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.headerlogo_logoText",
+                            "description": "",
+                            "value": "@locales.headerlogo_logoText_val"
+                        }
+                    },
+                    {
+                        "code": "logo",
+                        "type": "image",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.headerlogo_logo",
+                            "description": "",
+                            "value": "@locales.headerlogo_logo_val"
+                        }
+                    }
+                ]
+            },
+            {
+                "code": "topMenuFixedLink",
+                "name": "Fixed Links",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 1,
+                "description": {
+                    "name": "@locales.topMenuFixedLink",
+                    "description": "",
+                    "collection-name": "@locales.topMenuFixedLink",
+                    "item-name": "@locales.topMenuFixedLink_item",
+                    "button-name": "@locales.Link_button"
+                },
+                "collections": [
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 1,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.topMenuFixedLink_itemname_val"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.topMenuFixedLink_itemname_val1"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "mainMenuLink",
+                "name": "Main Menu",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 0,
+                "description": {
+                    "name": "@locales.mainMenuLink",
+                    "description": "",
+                    "collection-name": "",
+                    "item-name": "",
+                    "button-name": ""
+                },
+                "fields": [
+                    {
+                        "code": "itemlink",
+                        "type": "tags-category",
+                        "option-id": "",
+                        "multi-lang": "0",
+                        "description": {
+                            "name": "@locales.mainMenuLink_menuLink_itemlink",
+                            "description": "",
+                            "value": "0,0,0,0,0,0"
+                        }
+                    }
+                ]
+            },
+            {
+                "code": "topCategoryMenu",
+                "name": "Category Menu",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 1,
+                "description": {
+                    "name": "@locales.topCategoryMenu",
+                    "description": "",
+                    "collection-name": "@locales.topCategoryMenu",
+                    "item-name": "@locales.topCategoryMenu_item",
+                    "button-name": "@locales.topCategoryMenu_button"
+                },
+                "collections": [
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 1,
+                        "fields": [
+                            {
+                                "code": "categories",
+                                "type": "tags-category",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.topCategoryMenu_categories",
+                                    "description": "",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "categories",
+                                "type": "tags-category",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.topCategoryMenu_categories",
+                                    "description": "",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "categories",
+                                "type": "tags-category",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.topCategoryMenu_categories",
+                                    "description": "",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "footer": [
+            {
+                "code": "about",
+                "name": "about",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 0,
+                "description": {
+                    "name": "@locales.about",
+                    "description": "",
+                    "collection-name": "@locales.about",
+                    "item-name": "@locales.about",
+                    "button-name": "@locales.about"
+                },
+                "fields": [
+                    {
+                        "code": "aboutTitle",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.itemTitle",
+                            "description": "",
+                            "value": "@locales.aboutTitle_val"
+                        }
+                    },
+                    {
+                        "code": "aboutText",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.itemText",
+                            "description": "",
+                            "value": "@locales.aboutText_val"
+                        }
+                    }
+                ]
+            },
+            {
+                "code": "footerSocialMedia",
+                "name": "Social Media",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 0,
+                "description": {
+                    "name": "@locales.footer_SocialMedia",
+                    "description": "",
+                    "collection-name": "",
+                    "item-name": "",
+                    "button-name": ""
+                },
+                "fields": [
+                    {
+                        "code": "FaceBookSM",
+                        "type": "link",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_FaceBookSM",
+                            "description": "",
+                            "value": "#"
+                        }
+                    },
+                    {
+                        "code": "TwitterSM",
+                        "type": "link",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_TwitterSM",
+                            "description": "",
+                            "value": "#"
+                        }
+                    },
+                    {
+                        "code": "GooglePlusSM",
+                        "type": "link",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_GooglePlusSM",
+                            "description": "",
+                            "value": "#"
+                        }
+                    },
+                    {
+                        "code": "InstagramSM",
+                        "type": "link",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_InstagramSM",
+                            "description": "",
+                            "value": "#"
+                        }
+                    },
+                    {
+                        "code": "LinkedInSM",
+                        "type": "link",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_LinkedInSM",
+                            "description": "",
+                            "value": "#"
+                        }
+                    }
+                ]
+            },
+            {
+                "code": "footerFixedLink1",
+                "name": "Fixed Links",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 1,
+                "description": {
+                    "name": "@locales.footerFixedLink1",
+                    "description": "",
+                    "collection-name": "@locales.footerFixedLink1",
+                    "item-name": "@locales.footerFixedLink1",
+                    "button-name": "@locales.Link_button"
+                },
+                "fields":[
+                    {
+                        "code": "Title",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.itemTitle",
+                            "description": "",
+                            "value": "@locales.footerFixedLink1Title_val"
+                        }
+                    }
+                ],
+                "collections": [
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 1,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/information&information_id=4"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/information&information_id=4"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val1"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/contact"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val2"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/information&information_id=5"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "footerFixedLink2",
+                "name": "Fixed Links",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 1,
+                "description": {
+                    "name": "@locales.footerFixedLink2",
+                    "description": "",
+                    "collection-name": "@locales.footerFixedLink2",
+                    "item-name": "@locales.footerFixedLink2",
+                    "button-name": "@locales.Link_button"
+                },
+                "fields":[
+                    {
+                        "code": "Title",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.itemTitle",
+                            "description": "",
+                            "value": "@locales.footerFixedLink2Title_val"
+                        }
+                    }
+                ],
+                "collections": [
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 1,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/information&information_id=4"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/information&information_id=4"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val1"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/contact"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemname",
+                                "type": "text",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemname",
+                                    "description": "",
+                                    "value": "@locales.footerFixedLink_itemname_val2"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "information/information&information_id=5"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "footerContacts",
+                "name": "footer Contacts",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 0,
+                "description": {
+                    "description": "",
+                    "name": "@locales.footer_footerContacts",
+                    "collection-name": "@locales.footer_footerContacts",
+                    "item-name": "",
+                    "button-name": ""
+                },
+                "fields":[
+                    {
+                        "code": "contactsPhone",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_contactsPhone",
+                            "description": "",
+                            "value": "@locales.footer_value_contactsPhone"
+                        }
+                    },
+                    {
+                        "code": "contactsEmail",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_contactsEmail",
+                            "description": "",
+                            "value": "@locales.footer_value_contactsEmail"
+                        }
+                    },
+                    {
+                        "code": "contactsAddress",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_contactsAddress",
+                            "description": "",
+                            "value": "@locales.footer_value_contactsAddress"
+                        }
+                    }
+                ]
+            },
+            {
+                "code": "copyright",
+                "name": "copyright",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 0,
+                "description": {
+                    "name": "@locales.copyright",
+                    "description": "",
+                    "collection-name": "",
+                    "item-name": "",
+                    "button-name": ""
+                },
+                "fields":[
+                    {
+                        "code": "copyrightText",
+                        "type": "text",
+                        "option-id": "",
+                        "multi-lang": "1",
+                        "description": {
+                            "name": "@locales.footer_copyrightText",
+                            "description": "",
+                            "value": "@locales.footer_value_copyrightText"
+                        }
+                    }
+                ]
+            },
+            {
+                "code": "payment",
+                "name": "Payment Methods",
+                "type": "live",
+                "state": "enabled",
+                "is-collection": 1,
+                "description": {
+                    "name": "@locales.payment",
+                    "description": "",
+                    "collection-name": "@locales.payment",
+                    "item-name": "@locales.payment",
+                    "button-name": "@locales.Link_button"
+                },
+                "collections": [
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 1,
+                        "fields": [
+                            {
+                                "code": "itemImage",
+                                "type": "image",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemImage",
+                                    "description": "",
+                                    "value": "data/custom-restaurant/express.png"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemImage",
+                                "type": "image",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemImage",
+                                    "description": "",
+                                    "value": "data/custom-restaurant/express.png"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemImage",
+                                "type": "image",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemImage",
+                                    "description": "",
+                                    "value": "data/custom-restaurant/k.png"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemImage",
+                                "type": "image",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemImage",
+                                    "description": "",
+                                    "value": "data/custom-restaurant/mada.png"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemImage",
+                                "type": "image",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemImage",
+                                    "description": "",
+                                    "value": "data/custom-restaurant/master.jpg"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "item",
+                        "thumbnail": "N/A",
+                        "is-default": 0,
+                        "fields": [
+                            {
+                                "code": "itemImage",
+                                "type": "image",
+                                "option-id": "",
+                                "multi-lang": "1",
+                                "description": {
+                                    "name": "@locales.itemImage",
+                                    "description": "",
+                                    "value": "data/custom-restaurant/visa.png"
+                                }
+                            },
+                            {
+                                "code": "itemlink",
+                                "type": "link",
+                                "option-id": "",
+                                "multi-lang": "0",
+                                "description": {
+                                    "name": "@locales.itemlink",
+                                    "description": "",
+                                    "value": "#"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "locales": {
+        "en": {
+            "footer_value_contactsPhone":" +777 2345 7885; +777 2345 7886",
+            "footer_value_contactsHours":"7 Days a week from 10 am to 6 pm",
+            "footer_value_contactsAddress":"STORE 140 NEW STR., SUITE 21 BROOKLYN, NY",
+            "footer_value_contactsEmail":"info@mydomain.com",
+            "name": "restaurant",
+            "page_home_name": "Home page",
+            "maincontent_name":"Main contents",
+            "page_general_name":"General",
+            "general_maincontent_name":"Main Content",
+            "bottomcontent_name":"Bottom Content",
+            "options": "Display Extra Icon in Nav",
+            "options_value": "data/gravit/partner1.jpg",
+            "options_section": "Options",
+            "options_section_collection_name": "Options",
+            "options_section_item_name": "Option",
+            "options_section_button_name": "Add New Option",
+            "menucolor": "Menu Color",
+            "maincolor_value": "data/gravit/partner1.jpg",
+            "colors_section":"Colors",
+            "colors_section_name":"Colors",
+            "colors_section_item_name":"Color",
+            "colors_section_button_name":"Add New Color",
+            "fonts_section": "Fonts",
+            "fonts_section_collection_name": "Fonts",
+            "fonts_section_item_name": "Fonts",
+            "fonts_section_button_name": "add New Fonts ",
+            "arabic_font": "Arabic Fonts",
+            "english_font": "English Font",
+            "maincolor":"Main color",
+            "headerlogo":"Store Logo",
+            "headerlogo_Checkbox_name":"Text Logo",
+            "headerlogo_logoText":"Logo Text",
+            "headerlogo_logoText_val":"Store Name",
+            "headerlogo_logo":"Logo",
+            "headerlogo_logo_val":"data/custom-restaurant/logo.png",
+            "topMenuFixedLink":"Fixed Link",
+            "topMenuFixedLink_item":"Fixed Link",
+            "Link_button":"Add A Link",
+            "itemname":"Item Name",
+            "itemlink":"Item Link",
+            "topMenuFixedLink_itemname_val":"Item Name",
+            "topMenuFixedLink_itemname_val1":"Home",
+            "topCategoryMenu":"Dropdowns",
+            "topCategoryMenu_item":"Category Item",
+            "topCategoryMenu_button":"Add A Category",
+            "topCategoryMenu_categories":"Category",
+            "mainMenuLink": "Links",
+            "MenuLink1": "Static Menu Link 1",
+            "MenuLink2": "Static Menu Link 2",
+            "MenuLink3": "Static Menu Link 3",
+            "MenuLink4": "Static Menu Link 4",
+            "mainMenuLink_menuLink_itemlink": "Menu Item Link",
+            "mainMenuLink_collection_name": "Menu Items",
+            "mainMenuLink_item_name": "Menu Item",
+            "mainMenuLink_button_name": "Add New Menu Item",
+            "mainMenuLink_menuLink_itemname": "Menu Item Text",
+            "mainMenuLink_menuLink_itemname_val": "Home",
+            "mainMenuLink_menuLink_itemname_val_1": "Fashion",
+            "mainMenuLink_menuLink_itemname_val_2": "T-Shirts",
+            "mainMenuLink_menuLink_itemname_val_3": "Kitchen",
+            "mainMenuLink_menuLink_itemname_val_4": "Home Office",
+            "about":"About us",
+            "itemTitle":"Title",
+            "aboutTitle_val":"Buiness name",
+            "itemText":"Text",
+            "aboutText_val":"Easily set up a beautiful print-on-demand business in minutes with Merchify.",
+            "socialMedia":"Social Media Links",
+            "itemImage":"Image",
+            "footerFixedLink1":"Menu 1",
+            "footerFixedLink2":"Menu 2",
+            "footerFixedLink_itemname_val":"About us",
+            "footerFixedLink_itemname_val1":"Contact us",
+            "footerFixedLink_itemname_val2":"Terms & Conditions",
+            "footerFixedLink1Title_val":"Quick links",
+            "footerFixedLink2Title_val":"Terms & Conditions",
+            "contact":"Contact Info",
+            "contactTitle_val":"Contact us",
+            "contact_itemname_val":"Details",
+            "contact_itemname_val1":"3880 Braxton Street Chicago, il 60606 United States",
+            "contact_itemname_val2":"name@email.com",
+            "contact_itemname_val3":"002-01000000000",
+            "copyright":"copyright",
+            "footer_copyrightText":"Text",
+            "footer_value_copyrightText":"© 2021 store name Powered by expandcart.",
+            "payment":"Payment methods",
+            "footer_SocialMedia": "Social Media",
+            "footer_FaceBookSM": "FaceBook",
+            "footer_TwitterSM": "Twitter",
+            "footer_GooglePlusSM": "GooglePlus",
+            "footer_InstagramSM": "Instagram",
+            "footer_LinkedInSM": "LinkedIn",
+            "footer_footerContacts":"CONTACTS",
+            "footer_contactsAddress":"Address",
+            "footer_contactsPhone":"Phone" ,
+            "footer_contactsEmail":"Email Address" 
+        },
+        "ar": {
+            "footer_value_contactsPhone":" +777 2345 7885; +777 2345 7886",
+            "footer_value_contactsHours":"7 أيام في الأسبوع من الساعة 10 صباحًا حتى الساعة 6 مساءً",
+            "footer_value_contactsAddress":"2548 Broaddus Maple Court Avenue, Madisonville KY 4783, United States of America",
+            "footer_value_contactsEmail":"info@mydomain.com",
+            "name": "مطعم",
+            "page_home_name": "الصفحة الرئيسية",
+            "maincontent_name":"المحتوى الرئيسي",
+            "page_general_name":"الصفحة العامة",
+            "general_maincontent_name":"المحتوى الرئيسي",
+            "bottomcontent_name":"المحتوى السفلي",
+            "options": "عرض ايقونات اضافية في القائمة",
+            "options_value": "data/gravit/partner1.jpg",
+            "options_section": "اختيارات",
+            "options_section_collection_name": "اختيارات",
+            "options_section_item_name": "اختيار",
+            "options_section_button_name": "اضف اختيار جديد",
+             "maincolor": "اللون الاساسى",
+            "menucolor": "لون القائمة",
+            "colors_section": "الألوان",
+            "colors_section_collection_name": "الألوان",
+            "colors_section_item_name": "لون",
+            "colors_section_button_name": "اضف لون جديد",
+            "fonts_section":"الخط",
+            "fonts_section_collection_name":"الخط",
+            "fonts_section_item_name":"الخط",
+            "fonts_section_button_name":"اضف الخط جديد",
+            "arabic_font": "الخط العربي",
+            "english_font": "الخط الإنجليزي",
+            "headerlogo":"شعار المتجر",
+            "headerlogo_Checkbox_name":"شعار نصي",
+            "headerlogo_logoText":"نص الشعار",
+            "headerlogo_logoText_val":"اسم المتجر",
+            "headerlogo_logo":"صورة الشعار",
+            "headerlogo_logo_val":"data/custom-restaurant/logo.png",
+            "topMenuFixedLink":"الرابط الثابت",
+            "topMenuFixedLink_item":"رابط ثابت",
+            "Link_button":"اضف رابط",
+            "itemname":"اسم الوحدة",
+            "itemlink":"رابط الوحدة",
+            "topMenuFixedLink_itemname_val":"اسم الوحدة",
+            "topMenuFixedLink_itemname_val1":"الرئيسية",
+            "topCategoryMenu":"القوائم المنسدلة",
+            "topCategoryMenu_item":"وحدة القسم",
+            "topCategoryMenu_button":"اضف قسم",
+            "topCategoryMenu_categories":"القسم",
+            "mainMenuLink": "الروابط",
+            "MenuLink1": "روابط ثابتة 1",
+            "MenuLink2": "روابط ثابتة 2",
+            "MenuLink3": "روابط ثابتة 3",
+            "MenuLink4": "روابط ثابتة 4",
+            "mainMenuLink_collection_name": "عناصر القائمة",
+            "mainMenuLink_item_name": "عنصر القائمة",
+            "mainMenuLink_button_name": "إضافة عنصر قائمة جديد",
+            "mainMenuLink_menuLink_itemname": "نص عنصر القائمة",
+            "mainMenuLink_menuLink_itemname_val": "الصفحة الرئيسية",
+            "mainMenuLink_menuLink_itemname_val_1": "موضه",
+            "mainMenuLink_menuLink_itemname_val_2": "تيشرت",
+            "mainMenuLink_menuLink_itemname_val_3": "مطبخ",
+            "mainMenuLink_menuLink_itemname_val_4": "مكتب البيت",
+            "mainMenuLink_menuLink_itemlink": "رابط عنصر القائمة",
+            "about":"عن المتجر",
+            "itemTitle":"العنوان",
+            "aboutTitle_val":"اسم المتجر",
+            "itemText":"النص",
+            "aboutText_val":"Easily set up a beautiful print-on-demand business in minutes with Merchify.",
+            "socialMedia":"التواصل الاجتماعي",
+            "itemImage":"الصورة",
+            "footerFixedLink1":"القائمة الأولى",
+            "footerFixedLink2":"القائمة الثانية",
+            "footerFixedLink_itemname_val":"عن الموقع",
+            "footerFixedLink_itemname_val1":"اتصل بنا",
+            "footerFixedLink_itemname_val2":"الشروط و المواصفات",
+            "footerFixedLink1Title_val": "روابط هامة",
+            "footerFixedLink2Title_val": "الشروط ولاحكام",
+            "contact":"معلومات الاتصال",
+            "contactTitle_val":"اتصل بنا",
+            "contact_itemname_val":"التفاصيل",
+            "contact_itemname_val1":"3880 Braxton Street Chicago, il 60606 United States",
+            "contact_itemname_val2":"name@email.com",
+            "contact_itemname_val3":"002-01000000000",
+            "copyright":"حقوق الملكية",
+            "footer_copyrightText":"النص",
+            "footer_value_copyrightText":"© 2021 store name Bowered by expandcart.",
+            "payment":"وسائل الدفع",
+            "footer_SocialMedia": "روابط وسائل التواصل الاجتماعي",
+            "footer_FaceBookSM": "موقع التواصل الاجتماعي الفيسبوك",
+            "footer_TwitterSM": "تويتر",
+            "footer_GooglePlusSM": "GooglePlus",
+            "footer_InstagramSM": "إينستاجرام",
+            "footer_LinkedInSM": "موقع لينكدان",
+            "footer_footerContacts":"اتصالات",
+            "footer_contactsAddress":"العنوان",
+            "footer_contactsPhone":"الهاتف" ,
+            "footer_contactsEmail":"البريد الالكترونى" 
+
+        }
+    },
+    "options": [
+        {
+            "key": "EnglishFonts",
+            "name": "Hind Font",
+            "value": "Hind",
+            "language": "en",
+            "sort": 0
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Roboto Font",
+            "value": "Roboto",
+            "language": "en",
+            "sort": 1
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Open Sans Font",
+            "value": "Open Sans",
+            "language": "en",
+            "sort": 2
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Raleway Font",
+            "value": "Raleway",
+            "language": "en",
+            "sort": 3
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Montserrat Font",
+            "value": "Montserrat",
+            "language": "en",
+            "sort": 4
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Hind Font",
+            "value": "Hind",
+            "language": "en",
+            "sort": 0
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Roboto Font",
+            "value": "Roboto",
+            "language": "en",
+            "sort": 1
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Open Sans Font",
+            "value": "Open Sans",
+            "language": "en",
+            "sort": 2
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Cairo Font",
+            "value": "Cairo",
+            "language": "en",
+            "sort": 3
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Montserrat Font",
+            "value": "Montserrat",
+            "language": "en",
+            "sort": 4
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Hind Font",
+            "value": "Hind",
+            "language": "ar",
+            "sort": 0
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Roboto Font",
+            "value": "Roboto",
+            "language": "ar",
+            "sort": 1
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Open Sans Font",
+            "value": "Open Sans",
+            "language": "ar",
+            "sort": 2
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Raleway Font",
+            "value": "Raleway",
+            "language": "ar",
+            "sort": 3
+        },
+        {
+            "key": "EnglishFonts",
+            "name": "Montserrat Font",
+            "value": "Montserrat",
+            "language": "ar",
+            "sort": 4
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Hind Font",
+            "value": "Hind",
+            "language": "ar",
+            "sort": 0
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Roboto Font",
+            "value": "Roboto",
+            "language": "ar",
+            "sort": 1
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Open Sans Font",
+            "value": "Open Sans",
+            "language": "ar",
+            "sort": 2
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Cairo Font",
+            "value": "Cairo",
+            "language": "ar",
+            "sort": 3
+        },
+        {
+            "key": "ArabicFonts",
+            "name": "Montserrat Font",
+            "value": "Montserrat",
+            "language": "ar",
+            "sort": 4
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation One",
+            "value": "AnimationOne",
+            "language": "en",
+            "sort": 0
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation Two",
+            "value": "AnimationTwo",
+            "language": "en",
+            "sort": 1
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation Three",
+            "value": "AnimationThree",
+            "language": "en",
+            "sort": 2
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation Four",
+            "value": "AnimationFour",
+            "language": "en",
+            "sort": 3
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation One",
+            "value": "AnimationOne",
+            "language": "ar",
+            "sort": 0
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation Two",
+            "value": "AnimationTwo",
+            "language": "ar",
+            "sort": 1
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation Three",
+            "value": "AnimationThree",
+            "language": "ar",
+            "sort": 2
+        },
+        {
+            "key": "AnimationSlider",
+            "name": "Animation Four",
+            "value": "AnimationFour",
+            "language": "ar",
+            "sort": 3
+        },
+        {
+            "key": "CountBox",
+            "name": "1",
+            "value": "12",
+            "language": "en",
+            "sort": 0
+        },
+        {
+            "key": "CountBox",
+            "name": "2",
+            "value": "6",
+            "language": "en",
+            "sort": 1
+        },
+        {
+            "key": "CountBox",
+            "name": "3",
+            "value": "4",
+            "language": "en",
+            "sort": 2
+        },
+        {
+            "key": "CountBox",
+            "name": "1",
+            "value": "12",
+            "language": "ar",
+            "sort": 0
+        },
+        {
+            "key": "CountBox",
+            "name": "2",
+            "value": "6",
+            "language": "ar",
+            "sort": 1
+        },
+        {
+            "key": "CountBox",
+            "name": "3",
+            "value": "4",
+            "language": "ar",
+            "sort": 2
+        },
+        {
+            "key": "TextDirection",
+            "name": "right",
+            "value": "right",
+            "language": "en",
+            "sort": 0
+        },
+        {
+            "key": "TextDirection",
+            "name": "left",
+            "value": "left",
+            "language": "en",
+            "sort": 1
+        },
+        {
+            "key": "TextDirection",
+            "name": "right",
+            "value": "right",
+            "language": "ar",
+            "sort": 0
+        },
+        {
+            "key": "TextDirection",
+            "name": "left",
+            "value": "left",
+            "language": "ar",
+            "sort": 1
+        },
+        {
+            "key": "blockFN",
+            "name": "Get Latest Products",
+            "value": "getLatestProducts",
+            "language": "en",
+            "sort": 0
+        },
+        {
+            "key": "blockFN",
+            "name": "Get Best Seller Products",
+            "value": "getBestSellerProducts",
+            "language": "en",
+            "sort": 1
+        },
+        {
+            "key": "blockFN",
+            "name": "get Special Products",
+            "value": "getSpecialProducts",
+            "language": "en",
+            "sort": 2
+        },
+        {
+            "key": "blockFN",
+            "name": "Get Products By CategoryId",
+            "value": "getProductsByCategoryId",
+            "language": "en",
+            "sort": 3
+        },
+        {
+            "key": "blockFN",
+            "name": "Get Featured Products",
+            "value": "getFeaturedProducts",
+            "language": "en",
+            "sort": 4
+        },
+        {
+            "key": "blockFN",
+            "name": "الحصول على أحدث المنتجات",
+            "value": "getLatestProducts",
+            "language": "ar",
+            "sort": 0
+        },
+        {
+            "key": "blockFN",
+            "name": "الحصول على أفضل بائع المنتجات",
+            "value": "getBestSellerProducts",
+            "language": "ar",
+            "sort": 1
+        },
+        {
+            "key": "blockFN",
+            "name": "الحصول على المنتجات الخاصة",
+            "value": "getSpecialProducts",
+            "language": "ar",
+            "sort": 2
+        },
+        {
+            "key": "blockFN",
+            "name": "الحصول على المنتجات حسب معرف الفئة",
+            "value": "getProductsByCategoryId",
+            "language": "ar",
+            "sort": 3
+        },
+        {
+            "key": "blockFN",
+            "name": "الحصول على منتجات مميزة",
+            "value": "getFeaturedProducts",
+            "language": "ar",
+            "sort": 4
+        }
+    ]
+}

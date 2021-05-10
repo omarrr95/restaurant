@@ -1,0 +1,108 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+{#{ include('manymore/template/account/account.expand') }#}
+
+{% if success %}
+<br>
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ success }}
+</div>
+{% endif %}
+<!-- breadcrumb -->
+    <div class="page_header_color">
+        <div class="container">
+            <div class="breadcramb aos-item">
+                {% for breadcrumb in breadcrumbs %}
+                {% if not loop.last %}
+                <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+                {% else %}
+                <p>{{ breadcrumb['text'] }}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <h2 class="text-center" style="padding: 0 0 70px 0;">
+            {% for breadcrumb in breadcrumbs %}{% if loop.last %}{{ breadcrumb['text'] }}{% endif %}{% endfor %}
+        </h2>
+    </div>
+<!-- breadcrumb -->
+<div class="container">
+    <div id="content row">
+    
+        <div class="col-md-6">
+            <div class="page-title-base">
+                <h2 class="title-base">{{ lang('text_my_account') }}</h2>
+            </div>
+            <div class="links-list">
+                <ul class="list-none">
+                    <li><a href="{{ link('account/edit', '', 'SSL') }}">{{ lang('text_edit') }}</a></li>
+                    <li><a href="{{ link('account/password', '', 'SSL') }}">{{ lang('text_password') }}</a></li>
+                    <li><a href="{{ link('account/address', '', 'SSL') }}">{{ lang('text_address') }}</a></li>
+                    <li><a href="{{ link('account/wishlist') }}">{{ lang('text_wishlist') }}</a></li>
+                    <li><a href="{{ link('account/newsletter', '', 'SSL') }}">{{ lang('text_newsletter') }}</a></li>
+    
+    
+    
+                    {% if ms_is_active %}
+                        {% if ms_seller_created %}
+                            {% if ms_messaging_is_active %}
+                                <li><a href="{{ link('account/messagingseller', '', 'SSL') }}">{{ lang('text_messaging_customers') }}</a></li>
+                            {% endif %}
+                            <li><a href="{{ link('seller/account-dashboard', '', 'SSL') }}">{{ lang('account_sellerinfo') }}</a></li>
+                        {% else %}
+                            {% if ms_messaging_is_active %}
+                                <li><a href="{{ link('account/messagingseller', '', 'SSL') }}">{{ lang('text_messaging_seller') }}</a></li>
+                            {% endif %}
+                            <li><a href="{{ link('seller/register-seller', '', 'SSL') }}">{{ lang('sellerinfo_new') }}</a></li>
+                        {% endif %}
+                    {% endif %}
+    
+                    {% if networkMarketing['installed'] and networkMarketing['status'] == 1 %}
+                        <li>
+                            <a href="{{ link('marketing/network/agencies', '', 'SSL') }}">{{ lang('text_agencies') }}</a>
+                        </li>
+                    {% endif %}
+                    {# Buyer Subscription Plan #}
+                    {% if buyer_subscription_plan_is_installed %}
+                        <li>
+                            <a href="{{ link('account/upgrade', '', 'SSL') }}" style="{{ buyer_subscription_plan ? 'pointer-events: none' : '' }}">
+                                {{ lang('text_upgrade') }} 
+                                <ins> 
+                                    {{ ' (' ~  (buyer_subscription_plan.title ?: lang('text_free_plan') ) }}
+                                    {{ buyer_subscription_plan_expiration_date ? (' - ' ~ lang('text_will_expired_on') ~ ' ' ~ buyer_subscription_plan_expiration_date) : '' }}
+                                    {{ ')' }}
+                                </ins>
+                            </a>
+                        </li>                    
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    
+        <div class="col-md-6">
+            <div class="page-title-base">
+                <h2 class="title-base">{{ lang('text_orders') }}</h2>
+            </div>
+            <div class="links-list ">
+                <ul class="list-none">
+                    <li><a href="{{ link('account/order', '', 'SSL') }}">{{ lang('text_order') }}</a></li>
+                    <li><a href="{{ link('account/download', '', 'SSL') }}">{{ lang('text_download') }}</a></li>
+                    {% if config('reward_status') %}
+                        <li><a href="{{ link('account/reward', '', 'SSL') }}">{{ lang('text_reward') }}</a></li>
+                    {% endif %}
+                    <li><a href="{{ link('account/return', '', 'SSL') }}">{{ lang('text_' ~ return_type) }}</a></li>
+                    <li><a href="{{ link('account/transaction', '', 'SSL') }}">{{ lang('text_transaction') }}</a></li>
+    
+                    {% if ms_is_active %}
+                        {% if ms_seller_created %}
+                    <li><a href="{{ link('account/custom_invoice', '', 'SSL') }}">{{ lang('text_custom_invoice') }}</a></li>
+                        {% endif %}
+                    {% endif %}
+    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

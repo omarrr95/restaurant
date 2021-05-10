@@ -1,0 +1,61 @@
+<div class="header-bottom">
+    <div class="OverLay show-in-mobile-only">
+    
+    </div>
+    <ul>
+
+       
+        <li class="show-in-mobile-only">
+            <a onclick="CloseNavMenu()" class="show-in-mobile-only--close-menu"><i class="fas fa-times fa-lg"></i></a>
+        </li>
+        <li class="header-bottom--category-link {{is_home_page ? 'active'}}">
+            <a  href="{{ link('blog/blog', '', 'SSL') }}">blogs</a>
+        </li>
+        {% if header_data.topMenuFixedLink.section_state == 'enabled' %}
+        {% for collection in header_data.topMenuFixedLink.collections|slice(0, 10) %}
+        {% if is_home_page %}    
+        <li class="header-bottom--category-link {{is_home_page ? 'active'}}">
+            <a href="{{ collection.itemlink.value }}"> {{ collection.itemname.value }}</a>
+        </li>
+        {% else %}
+        <li class="header-bottom--category-link {{ request_url == collection.itemlink.value ? 'active' }}">
+            <a href="{{ collection.itemlink.value }}"> {{ collection.itemname.value }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% if header_data.mainMenuLink.section_state == 'enabled' %}
+            {% set featured_categories =
+            getCategoryAndChilds(header_data.mainMenuLink.fields['itemlink']['value'], 500,
+            500) %}
+            {% for item_category in featured_categories|slice(0, 12) %}
+            <li class="header-bottom--category-link {{ request_url == item_category.href ? 'active' }}">
+                <a href="{{ item_category.href }}">
+                    {{item_category.name }}
+                </a>
+            </li>
+            {% endfor %}
+        {% endif %}
+
+        {% if header_data.topCategoryMenu.section_state == 'enabled' %}
+        {% for collection in header_data.topCategoryMenu.collections %}
+        {% set featured_categories = getCategoryAndChilds(collection['categories']['value'], 500, 500) %}
+        {% for item_category in featured_categories|slice(0,1) %}
+        {% if item_category["sub_categories"]|length > 0 %}
+        <li>
+            <div class="dropdown header-bottom--category-menu">
+                <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item_category.name }} {#<i class="fas fa-caret-down"></i>#}
+                </a>
+                <div class="header-bottom--dropdown-content" aria-labelledby="header-bottom--category-menu">
+                    {% for sub_categories in item_category["sub_categories"] %}
+                    <a class="dropdown-item" href="{{ sub_categories.href }}">{{ sub_categories.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>

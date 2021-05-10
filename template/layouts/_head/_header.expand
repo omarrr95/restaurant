@@ -1,0 +1,57 @@
+{% use 'restaurant/template/layouts/_head/_linksHeader.expand' %}
+{% block header %}
+
+<head>
+    <title>{{ document_title }}</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <base href="{{ base_url }}" />
+    {% if document_description != '' %}
+    <meta name="description" content="{{ document_description }}" />
+    {% endif %}
+
+    {% if document_keywords != '' %}
+    <meta name="keywords" content="{{ document_keywords }}" />
+    {% endif %}
+
+    {% if store_icon != '' %}
+    <link href="{{ store_icon }}" rel="icon" />
+    {% endif %}
+
+    {% for link in document_links %}
+    <link href="{{ link.href }}" rel="{{ link.rel }}" />
+    {% endfor %}
+
+    {% for style in document_styles %}
+    <link rel="{{ style.rel }}" type="text/css" href="{{ style.href }}" media="{{ style.media }}" />
+    {% endfor %}
+
+    {% if route == "product/product" %}
+    <meta property="og:image" content="{{ ChildData.thumb }}" />
+    <meta property="og:url" content="{{ link('product/product', 'product_id=' ~ ChildData.product_id) }}" />
+    <meta property="og:title" content="{{ ChildData.product_name }}" />
+    <meta property="og:description" content="{{ ChildData.short_description|e }}" />
+    {% endif %}
+    <!-- Style CSS  -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ csslink('assets/css/animate.css') }}" />
+    <link rel="stylesheet" type="text/css" href="index.php?route=common/style{{ isdraft == 1 ? '&isdraft=1' : '' }}">
+    <!-- Style CSS  -->
+    {% set store_logo = image(header_data.headermain.fields.logo.value, 600, 600) %}
+    {% if structured_data is empty %}
+    {% include 'default/template/structured_data/store.expand' with {image: store_logo, logo: store_icon} %}
+    {% else %}
+    {{ structured_data }}
+    {% endif %}
+
+    {% block linksHeader %}
+    {{ parent() }}
+    {% endblock linksHeader %}
+
+
+</head>
+{% endblock header %}

@@ -1,0 +1,15 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+    <h1>{{ age }}</h1>
+  </div>
+
+  <script>
+    var myObject = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            age: '26'
+            }
+      })
+  </script>

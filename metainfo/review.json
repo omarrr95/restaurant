@@ -1,0 +1,117 @@
+{
+    "code": "review",
+    "name": "Home Section",
+    "type": ["available", "live"],
+    "state": "enabled",
+    "is-collection": 0,
+    "description": {
+        "name": "@locales.review",
+        "description": "@locales.review",
+        "collection-name": "TEST5",
+        "item-name": "@locales.review",
+        "button-name": "@locales.review",
+        "image": "N/A",
+        "thumbnail": "N/A"
+    },
+    
+    "fields": [
+        {
+            "code": "reviewImage",
+            "type": "image",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.reviewImage",
+                "description": "",
+                "value": "@locales.reviewImage_val"
+            }
+        },
+        {
+            "code": "reviewHeader",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.reviewHeader",
+                "description": "",
+                "value": "@locales.reviewHeader_val"
+            }
+        },       
+        {
+            "code": "reviewDescription",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.reviewDescription",
+                "description": "",
+                "value": "@locales.reviewDescription_val"
+            }
+        },
+         {
+            "code": "reviewImageUser",
+            "type": "image",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.reviewImageUser",
+                "description": "",
+                "value": "@locales.reviewImageUser_val"
+            }
+        },
+        {
+            "code": "reviewUser",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.reviewUser",
+                "description": "",
+                "value": "@locales.reviewUser_val"
+            }
+        },       
+        {
+            "code": "reviewUserTitleJob",
+            "type": "text",
+            "option-id": "",
+            "multi-lang": "1",
+            "description": {
+                "name": "@locales.reviewUserTitleJob",
+                "description": "",
+                "value": "@locales.reviewUserTitleJob_val"
+            }
+        }    
+    ],
+    "locales": {
+        "en": {
+            "review": "review",   
+            "reviewImage":"Image",
+            "reviewHeader":"review Header",
+            "reviewHeader_val":"What we say about Our history.",
+            "reviewDescription_val": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+            "reviewDescription":"review Description",
+            "reviewImageUser":"review User Image",
+            "reviewImageUser_val":"data/custom-restaurant/review-img.png",
+            "reviewUser":"review User name",
+            "reviewUser_val":"Elien Doama",
+            "reviewUserTitleJob":"Job Title",
+            "reviewUserTitleJob_val":"Chief officer",
+            "reviewImage_val":"data/custom-restaurant/review.png"          
+        },
+        "ar": {
+            "review": "الرأى",    
+            "reviewImage":" صورة ",
+            "reviewHeader":"عنوان الرأى",
+            "reviewHeader_val":"عرض اليوم",
+            "reviewDescription":"تفاصيل الرأى",
+            "reviewDescription_val":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren",
+            "reviewImageUser":"صورة صاحب الرأي",
+            "reviewImageUser_val":"data/custom-restaurant/review-img.png",
+            "reviewUser":"اسم صاحب الرأي",
+            "reviewUser_val":"إلين دوناروما",
+            "reviewUserTitleJob":"وظيفة صاحب الرأي",
+            "reviewUserTitleJob_val":"بلوجر مطبخ",
+            "reviewImage_val":"data/custom-restaurant/review.png"
+        }
+    }
+}

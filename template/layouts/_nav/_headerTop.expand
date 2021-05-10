@@ -1,0 +1,118 @@
+<div class="header-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div>
+                    <nav class="">
+                        <ul class="pull-left header-top--social-part">
+
+                            {% if footer_data.footerSocialMedia.section_state == 'enabled' %}
+                            <li>
+                                <a class="header-top--social-part--social-label">
+                                    {{ lang('Follow_us') }}
+                                </a>
+                            </li>
+                            {{ include('restaurant/template/Shared/_SocialMedia.expand') }}
+                            {% endif %}
+                        </ul>
+                        <ul class="pull-right user-part">
+
+                            <!-- Start currency -->
+                            {% if currencies|length > 1 %}
+                            <li>
+                                <div class="dropdown show">
+                                    <a role="button" class="Btn-currency" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        {{ current_currency.symbol }}
+                                    </a>
+                                    <div class="dropdown-menu DropDownHeader DropDownUser"
+                                        aria-labelledby="dropdownMenuButton">
+                                        <form action="{{ link('common/home') }}" method="post"
+                                            enctype="multipart/form-data">
+                                            {% for currency in currencies %}
+                                            <a href="#"
+                                                class="dropdown-item {{ currency.symbol == current_currency.symbol  ? "
+                                                active" : "" }}"
+                                                onclick="$('input[name=\'currency_code\']').attr('value', '{{ currency.code }}'); $(this).closest('form').submit(); return false;">
+                                                <span class="currency-index">{{ currency.symbol
+                                                    }}</span>
+                                            </a>
+                                            {% endfor %}
+                                            <input type="hidden" name="currency_code" value="" />
+                                            <input type="hidden" name="redirect" value="{{ redirect }}" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
+                            <!-- Start currency -->
+                            {% if languages|length > 1 %}
+                            <li>
+                                <!-- Start Language -->
+                                <div class="dropdown show">
+                                    <a role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        {{current_language.name}}
+                                    </a>
+                                    <div class="dropdown-menu DropDownHeader DropDownUser"
+                                        aria-labelledby="dropdownMenuButton">
+                                        <form method="post" enctype="multipart/form-data">
+                                            {% for language in languages %}
+                                            <a href="#" title="{{ language.name }}"
+                                                class="dropdown-item {{ language.name == current_language.name  ? "
+                                                active" : "" }}"
+                                                onclick="$('input[name=\'language_code\']').attr('value', '{{ language.code }}'); $(this).closest('form').submit(); return false;">
+                                                {{ language.name }}
+                                            </a>
+                                            {% endfor %}
+                                            <input type="hidden" name="language_code" value="" />
+                                            <input type="hidden" name="redirect" value="{{ redirect }}" />
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End Language -->
+                            </li>
+                            {% endif %}
+                            {% if logged == false %}
+              
+                            <li>
+                                <a href="{{ link('account/login', '', 'SSL') }}" class="user-part--account-btn">
+                                    <span>{{ lang('Account_Login') }}</span></a>
+                            </li>
+                            <li>
+                                <a href="{{ link('account/register', '', 'SSL') }}" class="user-part--account-btn">
+                                    <span>{{ lang('Account_Register') }}</span></a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="{{ link('account/account') }}" class="user-part--account-btn">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>{{ lang('Account_Account') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ link('account/logout', '', 'SSL') }}" class="user-part--account-btn">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    {{ lang('AccountLogout')|format(link('account/account', '', 'SSL'),
+                                    customer.getFirstName(), link('account/logout',
+                                    '', 'SSL')) }}
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li><a class="user-part--wish-list-btn" href="{{ link('account/wishlist') }}"><i class="far fa-heart"></i></a></li>
+
+
+                            <li class="show-in-mobile-only BtnNavMenu"><a onclick="OpenNavMenu()"><i
+                                        class="fas fa-bars"></i></a></li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

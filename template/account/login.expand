@@ -1,0 +1,132 @@
+{% extends Template_Name~"/template/layouts/master.expand" %}
+{% block content %}
+<!-- {% if success %}
+<br>
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ success }}
+</div>
+{% endif %} -->
+
+{% if error_warning %}
+<br>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ error_warning }}
+</div>
+{% endif %}
+
+<div id="content">
+    <!-- breadcrumb -->    
+    <div>
+      
+            <div class="breadcramb aos-item">
+              <div class="container">
+                {% for breadcrumb in breadcrumbs %}
+                {% if not loop.last %}
+                <a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a>
+                {% else %}
+                <p>{{ breadcrumb['text'] }}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+    <!-- Start Login -->
+    <div id="tt-pageContent" class="container">
+            <div class="container-indent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="tt-login-form">
+                                <div class="tt-item">
+                                    <h2 class="tt-title">{{lang('button_login')}}</h2>
+                                    {# {{lang('login_message')}} #}
+                                    <div class="form-default form-top">
+                                        <form action="{{ link('account/login', '', 'SSL') }}" method="post" enctype="multipart/form-data" id="login"
+                                            novalidate="novalidate">
+                                            <div class="form-group">
+                                                {# <label for="loginInputName">{{lang('user_required')}}</label> #}
+                                                <div class="tt-required">{{ lang('email') }}: *</div>
+                                                <!-- <input type="text" name="name" class="form-control" id="loginInputName" placeholder="Enter Username or E-mail"> -->
+                                                <input type="text" name="email" class="form-control" id="loginInputName"
+                                                    placeholder="{{ lang('entry_email') }}" value="{{ email }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="loginInputEmail">{{ lang('entry_password') }} *</label>
+                                                <!-- <input type="text" name="passowrd" class="form-control" id="loginInputEmail" placeholder="Enter Password"> -->
+                                                <input type="password" name="password" class="form-control" id="loginInputEmail"
+                                                    placeholder="{{ lang('entry_password') }}" value="{{ password }}">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        {% if (recaptcha['status'] == 1 and recaptcha['page_enabled_status'] == 1 )%}
+                                                        <div id="recaptcha-error"></div>
+                                                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                                                        <div class="g-recaptcha" data-sitekey="{{ recaptcha['site-key'] }}"></div>
+                                                        <button onclick="onSubmit()" type="submit" class="g-recaptcha btn btn-inline"
+                                                            data-sitekey="{{ recaptcha['site-key'] }}">{{ lang('button_login') }}</button>
+                                                    </div>
+                                                </div>
+                                                {% else %}
+                                                    <div class="form-group">
+                                                        <!-- <button class="btn btn-border" type="submit">LOGIN</button> -->
+                                                        <button type="submit" class="btn-login" disabled style="display: inline-block;">
+                                                            {{ lang('button_login') }}
+                                                        </button>
+                                                        <span class="not-valid"></span>
+                                                        {% if redirect %}
+                                                        <input type="hidden" name="redirect" value="{{ redirect }}" />
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <a class="btn-forget" href="{{ link('account/forgotten', '', 'SSL') }}">{{ lang('text_forgotten') }}</a>
+                                                    </div>
+                                                   <div class="form-group">
+                                                    {% if d_social_login_enabled %}
+                                                        {{ d_social_login }}
+                                                    {% endif %}
+                                                   </div>
+
+                                                    <div class="form-group">
+                                                        <p>
+                                                            {{lang('register_account')}}<a class="btn-create" href="{{ link('account/register', '', 'SSL') }}">
+                                                                {{ lang('create_account') }}
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- End Login -->    
+</div>
+
+<!-- <script type="text/javascript">
+    $('#login input').keydown(function(e) {
+        if (e.keyCode == 13) {
+            $('#login').submit();
+        }
+    });
+</script> -->
+<script type="text/javascript">
+    $('#login input').keydown(function(e) {
+        if (e.keyCode == 13) {
+            {% if (recaptcha['status'] == 1 and recaptcha['page_enabled_status'] == 1)  %}
+            onSubmit();
+            {% else %}
+            $('#login').submit();
+            {% endif %}
+        }
+    });
+</script>
+{% endblock %}

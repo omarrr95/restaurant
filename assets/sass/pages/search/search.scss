@@ -1,0 +1,52 @@
+.fast-finder-results {
+    .label-default {
+        display: none;
+    }
+    .content-holder {
+        strong {
+            font-size: 14px;
+        }
+    }
+    .search-result ~ p.text-center {
+        margin-bottom: 0;
+        a {
+            @include button-style;
+      }
+    }
+}
+.result-search {
+    .category-sec{
+    .category-sec--single {
+        @include category-sec;
+     }
+    }
+    .sort-pagi-bar {
+        margin-bottom: 10px;
+        .sort-bar,
+        .show-bar {
+            label {
+               font-size: 12px;
+            }
+            select {
+                font-size: 12px;
+                padding: 3px 10px;
+                margin-#{$start}: 10px;
+            }
+        }
+    }
+}
+.search-params {
+    @include Checkbox;
+    .form-group {
+        .form-control {
+            border-radius: 0;
+            border-radius: 0;
+            font-size: 13px;
+        }
+    }
+
+}
+.btnStyle {
+    @include button-style;
+    width: 100%;
+}

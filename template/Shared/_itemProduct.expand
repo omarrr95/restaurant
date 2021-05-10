@@ -1,0 +1,53 @@
+
+
+<div id="item-products">
+    <div class="category-sec--single--img-container">
+        {% for item_cat_id in item_product.categories_ids  %}
+               <span class="filter" data-item="{{ item_cat_id.category_id}}"></span>
+                 {% endfor %}
+              <a onclick="addToWishList({{ item_product.product_id }})" data-id="{{ item_cat_id.category_id}}" class="wishlist  add-To-Wishlist {{ in_wishlist == 1 ? "active removeFromWishlist" : "addToWishlist"}}" product-id="{{product_id}}">
+          
+                  <i class="far fa-heart"></i>
+              </a>
+                  
+              <a  onclick="event.preventDefault(); addToCart({{ item_product.product_id }},1, {{ ("-1" in item_product.price) or ("-1" in item_product.special) ? "true" : "false" }}); return false;"
+              data-src="#modalCheckOut"><img src="{{item_product.thumb}}"></a>
+              <b class="category-sec--single--img-container--related-category">{{ featured_category.name}}</b>
+          </div>
+          <div class="category-sec--single-content-sec">
+              <a  onclick="event.preventDefault(); addToCart({{ item_product.product_id }},1, {{ ("-1" in item_product.price) or ("-1" in item_product.special) ? "true" : "false" }}); return false;"
+              data-src="#modalCheckOut">
+                  <div>
+                    <h5>{{item_product.name}}      
+                      </h5>
+                  </div>
+
+              </a>
+              <span class="price-on-selection" onclick="">{{ lang('Price_on_selection') }}</span>              
+
+              <p class="mb-0">
+              <div id="enquiry-id"  style="display:none">
+                  {% if item_product.special != "" %}
+                  <span class="NewPrice">{{ item_product.price }}</span>
+                  <span class="oldPrice">{{ item_product.special }}</span>
+                  {% else %}
+                  <span class="NewPrice">{{ item_product.price }}</span>
+                  {% endif %}
+              </div>
+                  </p>
+          
+                  <div class="product-rate catRate" style="background:none;">
+                      <!--  if review_status != "" and config("config_review_status") == "1" %} -->
+                      <img src="{{ asset("image/stars-" ~  item_product.rating  ~ ".png") }}"
+                          alt="{{ lang("text_reviews")|format(reviews_count) }}" />
+                      <!--  endif %} -->
+                  </div>
+                  <!-- <h6>Category name</h6> -->
+                  <div class="category-sec--single-content-sec--count-part">
+                      <a class="add-to-cart" 
+                      onclick="event.preventDefault(); addToCart({{ item_product.product_id }},1, {{ ("-1" in item_product.price) or ("-1" in item_product.special) ? "true" : "false" }}); return false;"
+                      data-src="#modalCheckOut">
+                          <i class="fas fa-plus-circle"></i>
+                      </a>            </div>
+              </div>
+          </div>
